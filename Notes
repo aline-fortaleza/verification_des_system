@@ -5,10 +5,11 @@ Notes:
 
 ** Possible invariants:
 - there are no clients with negative money
-- the total money is conserved
+- the total money is conserved -> good to check malicious 
 - the paid seat only belongs to one client
-- one client can never end with moe money than the start
+- one client can never end with more money than the start
 - a client can't cancel a ticket that they didn't buy
+- tickets ⊆ Seats 
 
 ** Possible temporal processes
 - if a client wants to buy, the system will eventually respond (confirm or deny)
