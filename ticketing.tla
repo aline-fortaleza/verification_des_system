@@ -7,7 +7,7 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
 
 (* --algorithm ticketing {
     variables
-        BankAccount = [x \in AllClients |-> INITMONEY]; 
+        BankAccount = [x \in AllParticipants |-> IF x = 0 THEN 0 ELSE INITMONEY];
         Channels = [x \in AllParticipants |-> <<>>]; \* Channels[ip] is the queue for messages TO ip
 
     define {
@@ -28,7 +28,7 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
                         bankID : bankIDType]
         M0 == [type |-> "buy",
                  from |-> 0,
-                 seat |-> 0,
+                 seat |-> 1,
                  bankID |-> 0]
 
 
