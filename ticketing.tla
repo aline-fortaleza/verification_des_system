@@ -107,16 +107,57 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
         s1: while (TRUE) {
             
             either{
+                \* Buy branch
                 await (state = "idle");
-                \* Client can buy or cancel a ticket
-                \* todo
+                state := "waiting";
+                \* Choose a seat to buy
+                wantSeat := CHOOSE s \in Seats : TRUE;
+                lastReqType := "buy";
+                \* Send buy request to server
+                Channels[0] := Append(Channels[0], 
+                                     [type |-> "buy", 
+                                      from |-> ip, 
+                                      seat |-> wantSeat, 
+                                      bankID |-> id]);
+                \* Wait for server response
+                await (Len(Channels[ip]) > 0);
+                reply := Head(Channels[ip]);
+                Channels[ip] := Tail(Channels[ip]);
+
+                \* Updatre local state
+                if (reply.type = "confirm") {
+                    tickets := tickets \union {reply.seat};
+                };
+                state := "idle";
+            } or {
+                \* Cancel branch
+                await (state = "idle" /\ tickets # {});
+                state := "waiting";
+
+                wantSeat := CHOOSE s \in tickets : TRUE;
+                lastReqType := "cancel";
+
+                Channels[0] := Append(Channels[0], 
+                                     [type |-> "cancel", 
+                                      from |-> ip, 
+                                      seat |-> wantSeat, 
+                                      bankID |-> id]);
+
+                await (Len(Channels[ip]) > 0);
+                reply := Head(Channels[ip]);
+                Channels[ip] := Tail(Channels[ip]);
+
+                if (reply.type = "confirm") {
+                    tickets := tickets \ {wantSeat};
+                };
+                state := "idle";
+            }
             }
         }
 ^
     }
 
-}
-*)
+}*)
 
 \* END TRANSLATION 
 
