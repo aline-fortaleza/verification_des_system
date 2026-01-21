@@ -1,7 +1,7 @@
 ----------------------------- MODULE ticketing -----------------------------
 \* Change for later: CHOOSE m \in 1..INITMONEY : TRUE
 
-EXTENDS Integers, TLC, Sequences, FiniteSets, helpers
+EXTENDS Integers, TLC, Sequences, FiniteSets
 
 CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
 
@@ -110,8 +110,11 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
         s1: while (TRUE) {
             
             either{
+                BWaitIdle:
                 \* Buy branch
                 await (state = "idle");
+                
+                BSend:
                 state := "waiting";
                 \* Choose a seat to buy
                 wantSeat := CHOOSE s \in Seats : TRUE;
@@ -122,11 +125,15 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
                                       from |-> ip, 
                                       seat |-> wantSeat, 
                                       bankID |-> id]);
+                                      
+                BWaitReply:
                 \* Wait for server response
                 await (Len(Channels[ip]) > 0);
                 reply := Head(Channels[ip]);
                 Channels[ip] := Tail(Channels[ip]);
-
+                
+                
+                BUpdate:
                 \* Updatre local state
                 if (reply.type = "confirm") {
                     tickets := tickets \union {reply.seat};
@@ -134,9 +141,11 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
                 state := "idle";
             } or {
                 \* Cancel branch
+                CWaitIdle:
                 await (state = "idle" /\ tickets # {});
+                
+                CSend:
                 state := "waiting";
-
                 wantSeat := CHOOSE s \in tickets : TRUE;
                 lastReqType := "cancel";
 
@@ -145,11 +154,13 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
                                       from |-> ip, 
                                       seat |-> wantSeat, 
                                       bankID |-> id]);
-
+                                      
+                CWaitReply:
                 await (Len(Channels[ip]) > 0);
                 reply := Head(Channels[ip]);
                 Channels[ip] := Tail(Channels[ip]);
 
+                CUpdate
                 if (reply.type = "confirm") {
                     tickets := tickets \ {wantSeat};
                 };
