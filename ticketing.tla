@@ -1,4 +1,5 @@
 ----------------------------- MODULE ticketing -----------------------------
+\* Change for later: CHOOSE m \in 1..INITMONEY : TRUE
 
 EXTENDS Integers, TLC, Sequences, FiniteSets, helpers
 
@@ -6,7 +7,7 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
 
 (* --algorithm ticketing {
     variables
-        BankAccount = [x \in AllClients |-> 0];
+        BankAccount = [x \in AllClients |-> INITMONEY]; 
         Channels = [x \in AllParticipants |-> <<>>]; \* Channels[ip] is the queue for messages TO ip
 
     define {
@@ -83,7 +84,7 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
                     Channels[internalReq.from] := Append(Channels[internalReq.from], 
                                                  [type |-> "confirm", 
                                                   from |-> 0, 
-                                                  seat |-> internalReq.seat + 1, 
+                                                  seat |-> internalReq.seat, 
                                                   bankID |-> id]);
                 } else {
                     Channels[internalReq.from] := Append(Channels[internalReq.from], 
