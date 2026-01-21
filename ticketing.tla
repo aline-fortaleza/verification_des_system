@@ -1,7 +1,7 @@
 ----------------------------- MODULE ticketing -----------------------------
 \* Change for later: CHOOSE m \in 1..INITMONEY : TRUE
 
-EXTENDS Integers, TLC, Sequences, FiniteSets, helpers
+EXTENDS Integers, TLC, Sequences, FiniteSets
 
 CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
 
@@ -119,11 +119,13 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
                                       from |-> ip, 
                                       seat |-> wantSeat, 
                                       bankID |-> id]);
-                \* Wait for server response
-                await (Len(Channels[ip]) > 0);
+                \* Wait for server responsE
+                await (Len(Channels[ip]) > 0);                
+                
                 reply := Head(Channels[ip]);
                 Channels[ip] := Tail(Channels[ip]);
-
+                
+                                
                 \* Updatre local state
                 if (reply.type = "confirm") {
                     tickets := tickets \union {reply.seat};
@@ -154,8 +156,7 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
             }
             }
         }
-^
-    }
+
 
 }*)
 
