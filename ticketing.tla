@@ -103,6 +103,9 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
         id = self; \* Client's BankID
         ip = self; \* Client's IP address
         state = "idle"; \* Client's state
+        wantSeat = 1; \* Seat the client wants to buy/cancel
+        reply = M0; \* Dummy var
+        lastReqType = "buy"; 
     {
         s1: while (TRUE) {
             
@@ -154,11 +157,9 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
                 };
                 state := "idle";
             }
-            }
         }
-
-
-}*)
+    }
+} *)
 
 \* END TRANSLATION 
 
