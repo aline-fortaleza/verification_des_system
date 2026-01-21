@@ -2,3 +2,15 @@ Notes:
 
 ** all the clients start with 0 money (no one can buy tickets)
 ** in the cancel section: a bug with the seats (seat |-> internalReq.seat + 1)
+
+** Possible invariants:
+- there are no clients with negative money
+- the total money is conserved
+- the paid seat only belongs to one client
+- one client can never end with moe money than the start
+- a client can't cancel a ticket that they didn't buy
+
+** Possible temporal processes
+- if a client wants to buy, the system will eventually respond (confirm or deny)
+
+** TO DO:  Client can buy or cancel a ticket
