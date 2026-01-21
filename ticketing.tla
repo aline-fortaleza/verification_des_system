@@ -53,8 +53,8 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
             await (Len(Channels[ip]) > 0);
             \* Read the first inline
             GET:
-            internalReq := Head(Channels[ip]);
-            Channels[ip] := Tail(Channels[ip]);
+            internalReq := Head(Channels[ip]); \* Dequeue the message
+            Channels[ip] := Tail(Channels[ip]); \* Remove the processed message from the queue
             
             TREAT:
             if (internalReq.type = "buy"){
@@ -92,7 +92,7 @@ CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
                                                   from |-> 0, 
                                                   seat |-> internalReq.seat, 
                                                   bankID |-> id]);
-                }
+                } \* didn't check the id -> someone who isn't the buyer can cancel the ticket
             }
             \* Ignore other message types
         }
