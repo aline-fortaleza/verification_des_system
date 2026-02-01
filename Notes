@@ -1,5 +1,6 @@
 Notes:
 
+Question 1:
 ** all the clients start with 0 money (no one can buy tickets)
 ** in the cancel section: a bug with the seats (seat |-> internalReq.seat + 1)
 
@@ -15,3 +16,5 @@ Notes:
 - if a client wants to buy, the system will eventually respond (confirm or deny)
 
 ** TO DO:  Client can buy or cancel a ticket
+
+
