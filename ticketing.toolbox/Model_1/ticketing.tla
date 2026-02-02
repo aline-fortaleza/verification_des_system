@@ -154,8 +154,6 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         while (TRUE) { skip; }
     }
 } *)
-=============================================================================
-
 \* BEGIN TRANSLATION (chksum(pcal) = "610ff71e" /\ chksum(tla) = "3bc2bcaf")
 \* Label s1 of process Server at line 57 col 13 changed to s1_
 \* Process variable id of process Server at line 51 col 9 changed to id_
@@ -371,6 +369,20 @@ Spec == /\ Init /\ [][Next]_vars
 Termination == <>(\A self \in ProcSet: pc[self] = "Done")
 
 \* END TRANSLATION 
+RECURSIVE SetSum(_)
+
+SetSum(S) ==
+  IF S = {}
+  THEN 0
+  ELSE LET x == CHOOSE y \in S : TRUE
+       IN  x + SetSum(S \ {x})
+
+Clients == AllHonest
+
+InitTotalMoney == Cardinality(AllHonest) * INITMONEY
+
+TotalMoney == SetSum({ BankAccount[p] : p \in AllParticipants })
+
 
 Inv_NoNegativeMoney ==
   \A c \in Clients : BankAccount[c] >= 0
@@ -399,6 +411,6 @@ Invariants ==
   /\ Inv_UniqueOwnership
   /\ Inv_NoMoreThanInitial
   /\ Inv_TicketsSubsetSeats
-
-
 =============================================================================
+
+
