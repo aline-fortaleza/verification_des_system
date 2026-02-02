@@ -18,3 +18,11 @@ Question 1:
 ** TO DO:  Client can buy or cancel a ticket
 
 
+Question 2:
+
+Server process -> the server checks if internalReq.bankID \in AllHonest, but it does not verify if the from field (the sender's IP/channel) actually matches that bankID. This allows a malicious user to send a "buy" request using their own IP but someone else's Bank ID.
+Everytime the malicious does this, it gets tickets using the client's bank account.
+
+We can verify this by adding the invariance;         
+MaliciousHasNoTickets == 
+            \A m \in AllMalicious : MyTickets[m] = {}

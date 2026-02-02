@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.lamport.tla.toolbox.tool.tlc.modelCheck">
-    <stringAttribute key="configurationName" value="Model_1"/>
+    <stringAttribute key="configurationName" value="Model_1_SnapShot_1770034686791"/>
     <intAttribute key="distributedFPSetCount" value="0"/>
     <stringAttribute key="distributedNetworkInterface" value="192.168.8.105"/>
     <intAttribute key="distributedNodesCount" value="1"/>
     <stringAttribute key="distributedTLC" value="off"/>
-    <intAttribute key="fpIndex" value="77"/>
+    <intAttribute key="fpIndex" value="119"/>
     <intAttribute key="maxHeapSize" value="25"/>
     <stringAttribute key="modelBehaviorInit" value=""/>
     <stringAttribute key="modelBehaviorNext" value=""/>
     <stringAttribute key="modelBehaviorSpec" value="Spec"/>
     <intAttribute key="modelBehaviorSpecType" value="1"/>
-    <stringAttribute key="modelBehaviorVars" value="seatMap, internalReq, pc, reply, wantSeat, target, Tickets, id, ip_, ip, id_, Channels, BankAccount, availSeats, CState"/>
+    <stringAttribute key="modelBehaviorVars" value="seatMap, ip_H, MyTickets, targetID, targetSeat, internalReq, pc, reply, wantSeat, scamsCount, target, Tickets, id, ip_, ip, id_, Channels, BankAccount, reply_, availSeats, CState"/>
     <stringAttribute key="modelComments" value=""/>
     <booleanAttribute key="modelCorrectnessCheckDeadlock" value="true"/>
     <listAttribute key="modelCorrectnessInvariants">
-        <listEntry value="0Invariants"/>
-        <listEntry value="1TypeOK"/>
-        <listEntry value="1MoneyTicketsInv"/>
+        <listEntry value="0TypeOK"/>
+        <listEntry value="1 MoneyTicketsInv"/>
         <listEntry value="1TicketsPaidInv"/>
-        <listEntry value="1 NoDoubleSell"/>
+        <listEntry value="1NoDoubleSell"/>
+        <listEntry value="0NoMoneyTheft"/>
+        <listEntry value="1MaliciousHasNoTickets"/>
     </listAttribute>
     <listAttribute key="modelCorrectnessProperties">
         <listEntry value="0Termination"/>
@@ -29,13 +30,13 @@
     <stringAttribute key="modelExpressionEval" value=""/>
     <listAttribute key="modelParameterConstants">
         <listEntry value="NUMSEATS;;10;0;0"/>
-        <listEntry value="MALICIOUS;;FALSE;0;0"/>
+        <listEntry value="MALICIOUS;;TRUE;0;0"/>
         <listEntry value="NUMCLIENTS;;3;0;0"/>
         <listEntry value="INITMONEY;;4;0;0"/>
     </listAttribute>
     <intAttribute key="modelVersion" value="20191005"/>
-    <intAttribute key="numberOfWorkers" value="4"/>
+    <intAttribute key="numberOfWorkers" value="2"/>
     <stringAttribute key="result.mail.address" value=""/>
-    <stringAttribute key="specName" value="ticketing"/>
+    <stringAttribute key="specName" value="ticketing2"/>
     <stringAttribute key="tlcResourcesProfile" value="local custom"/>
 </launchConfiguration>

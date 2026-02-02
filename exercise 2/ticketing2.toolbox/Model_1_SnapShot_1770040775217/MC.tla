@@ -1,30 +1,30 @@
 ---- MODULE MC ----
-EXTENDS ticketing, TLC
+EXTENDS ticketing2, TLC
 
 \* CONSTANT definitions @modelParameterConstants:0NUMSEATS
-const_177003084140420000 == 
+const_1770040756592187000 == 
 10
 ----
 
 \* CONSTANT definitions @modelParameterConstants:1MALICIOUS
-const_177003084140421000 == 
-FALSE
+const_1770040756592188000 == 
+TRUE
 ----
 
 \* CONSTANT definitions @modelParameterConstants:2NUMCLIENTS
-const_177003084140422000 == 
+const_1770040756592189000 == 
 3
 ----
 
 \* CONSTANT definitions @modelParameterConstants:3INITMONEY
-const_177003084140423000 == 
+const_1770040756592190000 == 
 4
 ----
 
-\* INVARIANT definition @modelCorrectnessInvariants:3
-inv_177003084140427000 ==
- NoDoubleSell
+\* INVARIANT definition @modelCorrectnessInvariants:0
+inv_1770040756592191000 ==
+ MoneyTicketsInv
 ----
 =============================================================================
 \* Modification History
-\* Created Mon Feb 02 12:14:01 CET 2026 by BiaLeao
+\* Created Mon Feb 02 14:59:16 CET 2026 by BiaLeao
