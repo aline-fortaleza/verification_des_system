@@ -10,8 +10,8 @@
     <stringAttribute key="modelBehaviorInit" value=""/>
     <stringAttribute key="modelBehaviorNext" value=""/>
     <stringAttribute key="modelBehaviorSpec" value="Spec"/>
-    <intAttribute key="modelBehaviorSpecType" value="1"/>
-    <stringAttribute key="modelBehaviorVars" value="lastReqType, seatMap, internalReq, pc, state, reply, wantSeat, tickets, target, id, ip_, ip, id_, Channels, BankAccount"/>
+    <intAttribute key="modelBehaviorSpecType" value="0"/>
+    <stringAttribute key="modelBehaviorVars" value=""/>
     <stringAttribute key="modelComments" value=""/>
     <booleanAttribute key="modelCorrectnessCheckDeadlock" value="true"/>
     <listAttribute key="modelCorrectnessInvariants">
@@ -21,6 +21,7 @@
         <listEntry value="0Termination"/>
     </listAttribute>
     <intAttribute key="modelEditorOpenTabs" value="8"/>
+    <stringAttribute key="modelExpressionEval" value=""/>
     <listAttribute key="modelParameterConstants">
         <listEntry value="NUMSEATS;;10;0;0"/>
         <listEntry value="MALICIOUS;;0;0;0"/>
