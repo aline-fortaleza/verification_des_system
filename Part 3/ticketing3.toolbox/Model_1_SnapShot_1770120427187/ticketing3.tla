@@ -214,7 +214,7 @@ Min2(a, b) == IF a <= b THEN a ELSE b
       
     {
         MStep: 
-            while (scamsCount < 1 /\ ~AllDone) { \* so that the system eventually stops (otherwise it would depend on the malicious client will)  
+            while (scamsCount < 1 /\ ~AllDone) {     
             with (h \in AllHonest, s \in {seat \in Seats : seatMap[seat] = "available"}) {
                 targetID := h;
                 targetSeat := s;

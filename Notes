@@ -28,3 +28,8 @@ MaliciousHasNoTickets ==
             \A m \in AllMalicious : MyTickets[m] = {}
 
 The IPs are now not only natural numbers but also union with -1 (so thet the malicious doesn't trigger the TypeOk in the beginning of the verification)
+
+
+Question 3:
+
+Since our malicious client was stealing the honest client's back anccounts, we added a new step in the massage as password. Now we have a new verification step with the clients password. The Malicious client isn't able to use another banck account as it won't match his password (there's a matching password for each bankId).
