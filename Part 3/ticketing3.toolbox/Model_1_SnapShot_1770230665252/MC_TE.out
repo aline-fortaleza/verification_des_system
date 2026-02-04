@@ -2,7 +2,7 @@
 TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
 @!@!@ENDMSG 2262 @!@!@
 @!@!@STARTMSG 2187:0 @!@!@
-Running breadth-first search Model-Checking with fp 61 and seed -6244363444734330178 with 2 workers on 4 cores with 608MB heap and 1365MB offheap memory [pid: 51339] (Mac OS X 10.16 x86_64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+Running breadth-first search Model-Checking with fp 110 and seed 1450059718940396022 with 2 workers on 4 cores with 608MB heap and 1365MB offheap memory [pid: 51258] (Mac OS X 10.16 x86_64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
 @!@!@ENDMSG 2187 @!@!@
 @!@!@STARTMSG 2220:0 @!@!@
 Starting SANY...
@@ -26,7 +26,7 @@ Semantic processing of module MC
 SANY finished.
 @!@!@ENDMSG 2219 @!@!@
 @!@!@STARTMSG 2185:0 @!@!@
-Starting... (2026-02-04 19:44:35)
+Starting... (2026-02-04 19:42:38)
 @!@!@ENDMSG 2185 @!@!@
 @!@!@STARTMSG 2212:0 @!@!@
 Implied-temporal checking--satisfiability problem has 1 branches.
@@ -35,14 +35,23 @@ Implied-temporal checking--satisfiability problem has 1 branches.
 Computing initial states...
 @!@!@ENDMSG 2189 @!@!@
 @!@!@STARTMSG 2190:0 @!@!@
-Finished computing initial states: 1 distinct state generated at 2026-02-04 19:44:36.
+Finished computing initial states: 1 distinct state generated at 2026-02-04 19:42:40.
 @!@!@ENDMSG 2190 @!@!@
 @!@!@STARTMSG 2192:0 @!@!@
-Checking temporal properties for the current state space with 3056 total distinct states at (2026-02-04 19:44:39)
+Checking temporal properties for the current state space with 3071 total distinct states at (2026-02-04 19:42:43)
 @!@!@ENDMSG 2192 @!@!@
 @!@!@STARTMSG 2267:0 @!@!@
-Finished checking temporal properties in 00s at 2026-02-04 19:44:40
+Finished checking temporal properties in 00s at 2026-02-04 19:42:43
 @!@!@ENDMSG 2267 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(18) at 2026-02-04 19:44:40: 9,281 states generated (9,281 s/min), 3,056 distinct states found (3,056 ds/min), 687 states left on queue.
+Progress(18) at 2026-02-04 19:42:43: 9,263 states generated (9,263 s/min), 3,071 distinct states found (3,071 ds/min), 712 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2192:0 @!@!@
+Checking temporal properties for the current state space with 214707 total distinct states at (2026-02-04 19:43:43)
+@!@!@ENDMSG 2192 @!@!@
+@!@!@STARTMSG 2267:0 @!@!@
+Finished checking temporal properties in 04s at 2026-02-04 19:43:48
+@!@!@ENDMSG 2267 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(42) at 2026-02-04 19:43:48: 836,447 states generated (827,184 s/min), 214,712 distinct states found (211,641 ds/min), 21,389 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
