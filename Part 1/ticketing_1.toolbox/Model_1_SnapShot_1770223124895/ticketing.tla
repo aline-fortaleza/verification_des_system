@@ -16,6 +16,8 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         Tickets     = [c \in 1..NUMCLIENTS |-> {}];
 
         CState      = [c \in 1..NUMCLIENTS |-> "idle"];
+        
+        getFlag = 0; 
 
     define {
 
@@ -68,7 +70,9 @@ Min2(a, b) == IF a <= b THEN a ELSE b
           \A s \in Seats :
             Cardinality({c \in AllHonest : s \in Tickets[c]}) <= 1
             
-
+        \* Intencionalmente FALSA: quebra logo após o 1º buy ser enviado ao servidor
+        BadInv_NoRequestsToServer ==
+            getFlag = 0
          \*-----------------------------
         \* Stop condition
         \* -----------------------------
@@ -89,13 +93,12 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         s1: while (TRUE) {
             WW:
             await Len(Channels[0]) > 0;
-            
+            test: getFlag := 1;
 
             GET:
             internalReq := Head(Channels[0]);
             Channels[ip] := Tail(Channels[0]);
-         
-            
+
             TREAT:
             if (internalReq.type = "buy") {
 
@@ -125,7 +128,6 @@ Min2(a, b) == IF a <= b THEN a ELSE b
                                 from |-> 0,
                                 seat |-> internalReq.seat,
                                 bankID |-> -2]);
-
                 }
 
             } else {
@@ -194,7 +196,7 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         while (TRUE) { skip; };
     }
 } *)
-\* BEGIN TRANSLATION (chksum(pcal) = "1ef1dac6" /\ chksum(tla) = "b6980118")
+\* BEGIN TRANSLATION (chksum(pcal) = "62bbdcd" /\ chksum(tla) = "b832f477")
 \* Label s1 of process Server at line 93 col 13 changed to s1_
 \* Process variable id of process Server at line 88 col 9 changed to id_
 \* Process variable ip of process Server at line 89 col 9 changed to ip_
@@ -298,10 +300,17 @@ s1_ == /\ pc[0] = "s1_"
 
 WW == /\ pc[0] = "WW"
       /\ Len(Channels[0]) > 0
-      /\ pc' = [pc EXCEPT ![0] = "GET"]
+      /\ pc' = [pc EXCEPT ![0] = "test"]
       /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, CState, getFlag, 
                       id_, ip_, internalReq, id, ip, wantSeat, reply, target, 
                       availSeats >>
+
+test == /\ pc[0] = "test"
+        /\ getFlag' = 1
+        /\ pc' = [pc EXCEPT ![0] = "GET"]
+        /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, CState, id_, 
+                        ip_, internalReq, id, ip, wantSeat, reply, target, 
+                        availSeats >>
 
 GET == /\ pc[0] = "GET"
        /\ internalReq' = Head(Channels[0])
@@ -325,22 +334,19 @@ TREAT == /\ pc[0] = "TREAT"
                                                                                              from |-> 0,
                                                                                              seat |-> internalReq.seat,
                                                                                              bankID |-> -2])]
-                               /\ UNCHANGED getFlag
                           ELSE /\ Channels' = [Channels EXCEPT ![internalReq.from] = Append(Channels[internalReq.from],
                                                                                             [type |-> "deny",
                                                                                              from |-> 0,
                                                                                              seat |-> internalReq.seat,
                                                                                              bankID |-> -2])]
-                               /\ getFlag' = 1
                                /\ UNCHANGED << BankAccount, seatMap, Tickets >>
                ELSE /\ TRUE
-                    /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, 
-                                    getFlag >>
+                    /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets >>
          /\ pc' = [pc EXCEPT ![0] = "s1_"]
-         /\ UNCHANGED << CState, id_, ip_, internalReq, id, ip, wantSeat, 
-                         reply, target, availSeats >>
+         /\ UNCHANGED << CState, getFlag, id_, ip_, internalReq, id, ip, 
+                         wantSeat, reply, target, availSeats >>
 
-Server == s1_ \/ WW \/ GET \/ TREAT
+Server == s1_ \/ WW \/ test \/ GET \/ TREAT
 
 InitTarget(self) == /\ pc[self] = "InitTarget"
                     /\ target' = [target EXCEPT ![self] = CHOOSE k \in 1..Min2(INITMONEY, NUMSEATS) : TRUE]

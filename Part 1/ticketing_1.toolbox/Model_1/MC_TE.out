@@ -1,0 +1,1090 @@
+@!@!@STARTMSG 2262:0 @!@!@
+TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
+@!@!@ENDMSG 2262 @!@!@
+@!@!@STARTMSG 2187:0 @!@!@
+Running breadth-first search Model-Checking with fp 72 and seed -5638120594640476947 with 4 workers on 8 cores with 564MB heap and 1266MB offheap memory [pid: 67609] (Linux 6.8.0-90-generic amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+@!@!@ENDMSG 2187 @!@!@
+@!@!@STARTMSG 2220:0 @!@!@
+Starting SANY...
+@!@!@ENDMSG 2220 @!@!@
+Parsing file /home/aline_fortaleza/Documents/classes_TSP/verificationSystems/project/verification_des_system/Part 1/ticketing_1.toolbox/Model_1/MC.tla
+Parsing file /home/aline_fortaleza/Documents/classes_TSP/verificationSystems/project/verification_des_system/Part 1/ticketing_1.toolbox/Model_1/ticketing.tla
+Warning: symbols were renamed.
+Parsing file /home/aline_fortaleza/Documents/TLA/toolbox/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/TLC.tla
+Parsing file /home/aline_fortaleza/Documents/TLA/toolbox/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Integers.tla
+Parsing file /home/aline_fortaleza/Documents/TLA/toolbox/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Sequences.tla
+Parsing file /home/aline_fortaleza/Documents/TLA/toolbox/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/FiniteSets.tla
+Parsing file /home/aline_fortaleza/Documents/TLA/toolbox/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Naturals.tla
+Semantic processing of module Naturals
+Semantic processing of module Integers
+Semantic processing of module Sequences
+Semantic processing of module FiniteSets
+Semantic processing of module TLC
+Semantic processing of module ticketing
+Semantic processing of module MC
+@!@!@STARTMSG 2219:0 @!@!@
+SANY finished.
+@!@!@ENDMSG 2219 @!@!@
+@!@!@STARTMSG 2185:0 @!@!@
+Starting... (2026-02-04 17:40:56)
+@!@!@ENDMSG 2185 @!@!@
+@!@!@STARTMSG 2212:0 @!@!@
+Implied-temporal checking--satisfiability problem has 1 branches.
+@!@!@ENDMSG 2212 @!@!@
+@!@!@STARTMSG 2189:0 @!@!@
+Computing initial states...
+@!@!@ENDMSG 2189 @!@!@
+@!@!@STARTMSG 2190:0 @!@!@
+Finished computing initial states: 1 distinct state generated at 2026-02-04 17:40:56.
+@!@!@ENDMSG 2190 @!@!@
+@!@!@STARTMSG 2110:1 @!@!@
+Invariant BadInv_NoRequestsToServer is violated.
+@!@!@ENDMSG 2110 @!@!@
+@!@!@STARTMSG 2121:1 @!@!@
+The behavior up to this point is:
+@!@!@ENDMSG 2121 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+1: <Initial predicate>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0]
+/\ pc = (0 :> "s1_" @@ 1 :> "InitTarget" @@ 2 :> "InitTarget" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<0, 0, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"idle", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+2: <s1_ line 298, col 8 to line 302, col 44 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0]
+/\ pc = (0 :> "WW" @@ 1 :> "InitTarget" @@ 2 :> "InitTarget" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<0, 0, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"idle", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+3: <InitTarget line 350, col 21 to line 355, col 70 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0]
+/\ pc = (0 :> "WW" @@ 1 :> "s1" @@ 2 :> "InitTarget" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 0, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"idle", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+4: <s1 line 357, col 13 to line 363, col 56 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0]
+/\ pc = (0 :> "WW" @@ 1 :> "CheckDone" @@ 2 :> "InitTarget" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 0, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"idle", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+5: <CheckDone line 365, col 20 to line 374, col 73 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0]
+/\ pc = (0 :> "WW" @@ 1 :> "BWaitIdle" @@ 2 :> "InitTarget" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 0, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"idle", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+6: <InitTarget line 350, col 21 to line 355, col 70 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0]
+/\ pc = (0 :> "WW" @@ 1 :> "BWaitIdle" @@ 2 :> "s1" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"idle", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+7: <BWaitIdle line 376, col 20 to line 381, col 77 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0]
+/\ pc = (0 :> "WW" @@ 1 :> "BSend" @@ 2 :> "s1" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"idle", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+8: <BSend line 383, col 16 to line 394, col 73 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0]
+/\ pc = (0 :> "WW" @@ 1 :> "BWaitReply" @@ 2 :> "s1" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = ( 0 :> <<[type |-> "buy", from |-> 1, seat |-> 1, bankID |-> 1]>> @@
+  1 :> <<>> @@
+  2 :> <<>> @@
+  3 :> <<>> )
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+9: <WW line 304, col 7 to line 309, col 35 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0]
+/\ pc = (0 :> "GET" @@ 1 :> "BWaitReply" @@ 2 :> "s1" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = ( 0 :> <<[type |-> "buy", from |-> 1, seat |-> 1, bankID |-> 1]>> @@
+  1 :> <<>> @@
+  2 :> <<>> @@
+  3 :> <<>> )
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+10: <GET line 311, col 8 to line 316, col 74 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 1, seat |-> 1, bankID |-> 1]
+/\ pc = (0 :> "TREAT" @@ 1 :> "BWaitReply" @@ 2 :> "s1" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+11: <s1 line 357, col 13 to line 363, col 56 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 1, seat |-> 1, bankID |-> 1]
+/\ pc = (0 :> "TREAT" @@ 1 :> "BWaitReply" @@ 2 :> "CheckDone" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+12: <CheckDone line 365, col 20 to line 374, col 73 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 1, seat |-> 1, bankID |-> 1]
+/\ pc = (0 :> "TREAT" @@ 1 :> "BWaitReply" @@ 2 :> "BWaitIdle" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+13: <BWaitIdle line 376, col 20 to line 381, col 77 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 1, seat |-> 1, bankID |-> 1]
+/\ pc = (0 :> "TREAT" @@ 1 :> "BWaitReply" @@ 2 :> "BSend" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = (0 :> <<>> @@ 1 :> <<>> @@ 2 :> <<>> @@ 3 :> <<>>)
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "idle", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+14: <BSend line 383, col 16 to line 394, col 73 of module ticketing>
+/\ seatMap = << "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 1, seat |-> 1, bankID |-> 1]
+/\ pc = (0 :> "TREAT" @@ 1 :> "BWaitReply" @@ 2 :> "BWaitReply" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = ( 0 :> <<[type |-> "buy", from |-> 2, seat |-> 1, bankID |-> 2]>> @@
+  1 :> <<>> @@
+  2 :> <<>> @@
+  3 :> <<>> )
+/\ BankAccount = (0 :> 0 @@ 1 :> 4 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "waiting", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+15: <TREAT line 318, col 10 to line 346, col 53 of module ticketing>
+/\ seatMap = << "paid",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 1, seat |-> 1, bankID |-> 1]
+/\ pc = (0 :> "s1_" @@ 1 :> "BWaitReply" @@ 2 :> "BWaitReply" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{1}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = ( 0 :> <<[type |-> "buy", from |-> 2, seat |-> 1, bankID |-> 2]>> @@
+  1 :> <<[type |-> "confirm", from |-> 0, seat |-> 1, bankID |-> -2]>> @@
+  2 :> <<>> @@
+  3 :> <<>> )
+/\ BankAccount = (0 :> 1 @@ 1 :> 3 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "waiting", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+16: <s1_ line 298, col 8 to line 302, col 44 of module ticketing>
+/\ seatMap = << "paid",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 1, seat |-> 1, bankID |-> 1]
+/\ pc = (0 :> "WW" @@ 1 :> "BWaitReply" @@ 2 :> "BWaitReply" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{1}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = ( 0 :> <<[type |-> "buy", from |-> 2, seat |-> 1, bankID |-> 2]>> @@
+  1 :> <<[type |-> "confirm", from |-> 0, seat |-> 1, bankID |-> -2]>> @@
+  2 :> <<>> @@
+  3 :> <<>> )
+/\ BankAccount = (0 :> 1 @@ 1 :> 3 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "waiting", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+17: <WW line 304, col 7 to line 309, col 35 of module ticketing>
+/\ seatMap = << "paid",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 1, seat |-> 1, bankID |-> 1]
+/\ pc = (0 :> "GET" @@ 1 :> "BWaitReply" @@ 2 :> "BWaitReply" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{1}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = ( 0 :> <<[type |-> "buy", from |-> 2, seat |-> 1, bankID |-> 2]>> @@
+  1 :> <<[type |-> "confirm", from |-> 0, seat |-> 1, bankID |-> -2]>> @@
+  2 :> <<>> @@
+  3 :> <<>> )
+/\ BankAccount = (0 :> 1 @@ 1 :> 3 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "waiting", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+18: <GET line 311, col 8 to line 316, col 74 of module ticketing>
+/\ seatMap = << "paid",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 2, seat |-> 1, bankID |-> 2]
+/\ pc = (0 :> "TREAT" @@ 1 :> "BWaitReply" @@ 2 :> "BWaitReply" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{1}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = ( 0 :> <<>> @@
+  1 :> <<[type |-> "confirm", from |-> 0, seat |-> 1, bankID |-> -2]>> @@
+  2 :> <<>> @@
+  3 :> <<>> )
+/\ BankAccount = (0 :> 1 @@ 1 :> 3 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}>>
+/\ getFlag = 0
+/\ CState = <<"waiting", "waiting", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2217:4 @!@!@
+19: <TREAT line 318, col 10 to line 346, col 53 of module ticketing>
+/\ seatMap = << "paid",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available",
+   "available" >>
+/\ internalReq = [type |-> "buy", from |-> 2, seat |-> 1, bankID |-> 2]
+/\ pc = (0 :> "s1_" @@ 1 :> "BWaitReply" @@ 2 :> "BWaitReply" @@ 3 :> "InitTarget")
+/\ reply = << [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0],
+   [type |-> "buy", from |-> 0, seat |-> 0, bankID |-> 0] >>
+/\ wantSeat = <<1, 1, 1>>
+/\ target = <<1, 1, 0>>
+/\ Tickets = <<{1}, {}, {}>>
+/\ id = <<1, 2, 3>>
+/\ ip_ = 0
+/\ ip = <<1, 2, 3>>
+/\ id_ = 0
+/\ Channels = ( 0 :> <<>> @@
+  1 :> <<[type |-> "confirm", from |-> 0, seat |-> 1, bankID |-> -2]>> @@
+  2 :> <<[type |-> "deny", from |-> 0, seat |-> 1, bankID |-> -2]>> @@
+  3 :> <<>> )
+/\ BankAccount = (0 :> 1 @@ 1 :> 3 @@ 2 :> 4 @@ 3 :> 4)
+/\ availSeats = <<{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, {}>>
+/\ getFlag = 1
+/\ CState = <<"waiting", "waiting", "idle">>
+
+@!@!@ENDMSG 2217 @!@!@
+@!@!@STARTMSG 2201:0 @!@!@
+The coverage statistics at 2026-02-04 17:40:57
+@!@!@ENDMSG 2201 @!@!@
+@!@!@STARTMSG 2773:0 @!@!@
+<Init line 277, col 1 to line 277, col 4 of module ticketing>: 2:2
+@!@!@ENDMSG 2773 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 278, col 9 to line 296, col 78 of module ticketing: 2
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<s1_ line 298, col 1 to line 298, col 3 of module ticketing>: 56:653
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 298, col 11 to line 298, col 23 of module ticketing: 2095
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 298, col 11 to line 298, col 15 of module ticketing: 1442
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 299, col 11 to line 299, col 39 of module ticketing: 653
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 300, col 11 to line 302, col 44 of module ticketing: 653
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<WW line 304, col 1 to line 304, col 2 of module ticketing>: 78:165
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 304, col 10 to line 304, col 21 of module ticketing: 1605
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 304, col 10 to line 304, col 14 of module ticketing: 1440
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 305, col 10 to line 305, col 29 of module ticketing: 165
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 305, col 10 to line 305, col 25 of module ticketing: 547
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 306, col 10 to line 306, col 39 of module ticketing: 165
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 307, col 10 to line 309, col 35 of module ticketing: 165
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<GET line 311, col 1 to line 311, col 3 of module ticketing>: 57:131
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 311, col 11 to line 311, col 23 of module ticketing: 1569
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 311, col 11 to line 311, col 15 of module ticketing: 1438
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 312, col 11 to line 312, col 42 of module ticketing: 131
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 313, col 11 to line 313, col 66 of module ticketing: 131
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 314, col 11 to line 314, col 42 of module ticketing: 131
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 315, col 11 to line 316, col 74 of module ticketing: 131
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<TREAT line 318, col 1 to line 318, col 5 of module ticketing>: 59:111
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 318, col 13 to line 318, col 27 of module ticketing: 1545
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 318, col 13 to line 318, col 17 of module ticketing: 1436
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 319, col 16 to line 319, col 39 of module ticketing: 111
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 320, col 27 to line 321, col 64 of module ticketing: 111
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 320, col 27 to line 320, col 65 of module ticketing: 111
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 321, col 30 to line 321, col 64 of module ticketing: 108
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 322, col 35 to line 322, col 90 of module ticketing: 108
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 323, col 35 to line 325, col 65 of module ticketing: 108
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 326, col 35 to line 327, col 100 of module ticketing: 108
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 328, col 35 to line 332, col 109 of module ticketing: 108
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 333, col 35 to line 333, col 51 of module ticketing: 108
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 334, col 35 to line 338, col 109 of module ticketing: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 334, col 47 to line 338, col 109 of module ticketing: 3
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 339, col 35 to line 339, col 46 of module ticketing: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 340, col 35 to line 340, col 79 of module ticketing: 1
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 342, col 24 to line 343, col 46 of module ticketing: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 344, col 13 to line 344, col 42 of module ticketing: 109
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 344, col 19 to line 344, col 42 of module ticketing: 111
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 345, col 13 to line 346, col 53 of module ticketing: 109
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<InitTarget line 350, col 1 to line 350, col 16 of module ticketing>: 201:716
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 350, col 24 to line 350, col 46 of module ticketing: 4997
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 350, col 24 to line 350, col 31 of module ticketing: 4281
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 351, col 24 to line 351, col 107 of module ticketing: 716
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 352, col 24 to line 352, col 55 of module ticketing: 716
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 353, col 24 to line 355, col 70 of module ticketing: 716
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<s1 line 357, col 1 to line 357, col 8 of module ticketing>: 299:760
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 357, col 16 to line 357, col 30 of module ticketing: 5039
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 357, col 16 to line 357, col 23 of module ticketing: 4279
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 358, col 19 to line 358, col 39 of module ticketing: 760
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 359, col 24 to line 359, col 65 of module ticketing: 728
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 360, col 24 to line 360, col 61 of module ticketing: 32
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 361, col 16 to line 363, col 56 of module ticketing: 760
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<CheckDone line 365, col 1 to line 365, col 15 of module ticketing>: 254:606
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 365, col 23 to line 365, col 44 of module ticketing: 4883
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 365, col 23 to line 365, col 30 of module ticketing: 4277
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 366, col 26 to line 367, col 66 of module ticketing: 606
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 366, col 26 to line 366, col 67 of module ticketing: 606
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 367, col 30 to line 367, col 65 of module ticketing: 550
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 367, col 47 to line 367, col 65 of module ticketing: 804
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 367, col 39 to line 367, col 43 of module ticketing: 550
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 368, col 31 to line 369, col 65 of module ticketing: 56
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 370, col 34 to line 370, col 72 of module ticketing: 550
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 371, col 34 to line 371, col 49 of module ticketing: 550
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 372, col 23 to line 374, col 73 of module ticketing: 606
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<BWaitIdle line 376, col 1 to line 376, col 15 of module ticketing>: 216:473
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 376, col 23 to line 376, col 44 of module ticketing: 4748
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 376, col 23 to line 376, col 30 of module ticketing: 4275
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 377, col 24 to line 377, col 44 of module ticketing: 946
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 377, col 24 to line 377, col 35 of module ticketing: 473
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 378, col 23 to line 378, col 57 of module ticketing: 473
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 379, col 23 to line 381, col 77 of module ticketing: 473
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<BSend line 383, col 1 to line 383, col 11 of module ticketing>: 225:414
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 383, col 19 to line 383, col 36 of module ticketing: 4687
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 383, col 19 to line 383, col 26 of module ticketing: 4273
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 384, col 19 to line 384, col 63 of module ticketing: 414
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 385, col 19 to line 385, col 102 of module ticketing: 414
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 385, col 33 to line 385, col 102 of module ticketing: 414
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 385, col 34 to line 385, col 43 of module ticketing: 414
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 385, col 52 to line 385, col 101 of module ticketing: 414
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2775:0 @!@!@
+  ||line 385, col 62 to line 385, col 101 of module ticketing: 414:826
+@!@!@ENDMSG 2775 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 385, col 77 to line 385, col 100 of module ticketing: 4140
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 385, col 69 to line 385, col 73 of module ticketing: 414
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 386, col 19 to line 386, col 95 of module ticketing: 414
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 387, col 19 to line 391, col 83 of module ticketing: 414
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 392, col 19 to line 392, col 58 of module ticketing: 414
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 393, col 19 to line 394, col 73 of module ticketing: 414
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<BWaitReply line 396, col 1 to line 396, col 16 of module ticketing>: 108:235
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 396, col 24 to line 396, col 46 of module ticketing: 4506
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 396, col 24 to line 396, col 31 of module ticketing: 4271
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 397, col 25 to line 397, col 51 of module ticketing: 235
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 397, col 25 to line 397, col 47 of module ticketing: 983
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 398, col 24 to line 398, col 60 of module ticketing: 235
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 399, col 24 to line 401, col 78 of module ticketing: 235
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<BBuying line 403, col 1 to line 403, col 13 of module ticketing>: 91:182
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 403, col 21 to line 403, col 40 of module ticketing: 4453
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 403, col 21 to line 403, col 28 of module ticketing: 4271
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 404, col 21 to line 404, col 78 of module ticketing: 182
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 405, col 21 to line 405, col 88 of module ticketing: 182
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 406, col 21 to line 406, col 57 of module ticketing: 182
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 407, col 21 to line 409, col 64 of module ticketing: 182
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<BUpdate line 411, col 1 to line 411, col 13 of module ticketing>: 72:133
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 411, col 21 to line 411, col 40 of module ticketing: 4404
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 411, col 21 to line 411, col 28 of module ticketing: 4271
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 412, col 21 to line 412, col 24 of module ticketing: 133
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 413, col 21 to line 413, col 62 of module ticketing: 133
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 414, col 21 to line 414, col 52 of module ticketing: 133
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 415, col 21 to line 417, col 71 of module ticketing: 133
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2772:0 @!@!@
+<Done_ line 419, col 1 to line 419, col 11 of module ticketing>: 0:14
+@!@!@ENDMSG 2772 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 419, col 19 to line 419, col 36 of module ticketing: 4285
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 419, col 19 to line 419, col 26 of module ticketing: 4271
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 420, col 19 to line 420, col 22 of module ticketing: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 421, col 19 to line 421, col 53 of module ticketing: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 422, col 19 to line 424, col 69 of module ticketing: 14
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<TypeOK line 237, col 1 to line 237, col 6 of module ticketing>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 238, col 3 to line 242, col 56 of module ticketing: 1717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<MoneyTicketsInv line 244, col 1 to line 244, col 15 of module ticketing>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 245, col 3 to line 246, col 56 of module ticketing: 1717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 246, col 5 to line 246, col 56 of module ticketing: 5151
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 245, col 12 to line 245, col 20 of module ticketing: 1717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<TicketsPaidInv line 249, col 1 to line 249, col 14 of module ticketing>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 250, col 3 to line 251, col 45 of module ticketing: 1717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 251, col 5 to line 251, col 45 of module ticketing: 5151
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 251, col 27 to line 251, col 45 of module ticketing: 1029
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 251, col 14 to line 251, col 23 of module ticketing: 5151
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 250, col 12 to line 250, col 20 of module ticketing: 1717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<NoDoubleSell line 254, col 1 to line 254, col 12 of module ticketing>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 255, col 3 to line 256, col 58 of module ticketing: 1717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 256, col 5 to line 256, col 58 of module ticketing: 17170
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 256, col 5 to line 256, col 53 of module ticketing: 17170
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 256, col 17 to line 256, col 52 of module ticketing: 17170
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 256, col 36 to line 256, col 51 of module ticketing: 51510
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||||line 256, col 24 to line 256, col 32 of module ticketing: 17170
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 255, col 12 to line 255, col 16 of module ticketing: 1717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<BadInv_NoRequestsToServer line 259, col 1 to line 259, col 25 of module ticketing>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 260, col 5 to line 260, col 15 of module ticketing: 1717
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2202:0 @!@!@
+End of statistics.
+@!@!@ENDMSG 2202 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(19) at 2026-02-04 17:40:57: 4,568 states generated (174,462 s/min), 1,717 distinct states found (65,576 ds/min), 292 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2199:0 @!@!@
+4568 states generated, 1717 distinct states found, 292 states left on queue.
+@!@!@ENDMSG 2199 @!@!@
+@!@!@STARTMSG 2194:0 @!@!@
+The depth of the complete state graph search is 19.
+@!@!@ENDMSG 2194 @!@!@
+@!@!@STARTMSG 2268:0 @!@!@
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 4 and the 95th percentile is 2).
+@!@!@ENDMSG 2268 @!@!@
+@!@!@STARTMSG 2186:0 @!@!@
+Finished in 1577ms at (2026-02-04 17:40:57)
+@!@!@ENDMSG 2186 @!@!@

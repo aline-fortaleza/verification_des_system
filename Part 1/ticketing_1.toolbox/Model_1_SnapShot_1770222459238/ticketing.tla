@@ -16,6 +16,8 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         Tickets     = [c \in 1..NUMCLIENTS |-> {}];
 
         CState      = [c \in 1..NUMCLIENTS |-> "idle"];
+        
+        getFlag = 0; 
 
     define {
 
@@ -68,13 +70,15 @@ Min2(a, b) == IF a <= b THEN a ELSE b
           \A s \in Seats :
             Cardinality({c \in AllHonest : s \in Tickets[c]}) <= 1
             
-
+        \* Intencionalmente FALSA: quebra logo após o 1º buy ser enviado ao servidor
+        BadInv_NoRequestsToServer ==
+            Len(Channels[0]) <= 2
          \*-----------------------------
         \* Stop condition
         \* -----------------------------
         AllDone ==
           /\ \A c \in AllHonest : CState[c] = "done"
-\*          /\ \A p \in AllParticipants : Len(Channels[p]) = 0
+          /\ \A p \in AllParticipants : Len(Channels[p]) = 0
 
         Terminates == <>AllDone
     }
@@ -84,18 +88,17 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         id = 0;
         ip = 0;
         internalReq = M0;
-        
-    {   
+    {
         s1: while (TRUE) {
+
             WW:
             await Len(Channels[0]) > 0;
-            
 
             GET:
+            getFlag := 1;
             internalReq := Head(Channels[0]);
             Channels[ip] := Tail(Channels[0]);
-         
-            
+
             TREAT:
             if (internalReq.type = "buy") {
 
@@ -125,7 +128,6 @@ Min2(a, b) == IF a <= b THEN a ELSE b
                                 from |-> 0,
                                 seat |-> internalReq.seat,
                                 bankID |-> -2]);
-
                 }
 
             } else {
@@ -133,8 +135,8 @@ Min2(a, b) == IF a <= b THEN a ELSE b
             };
         };
 
-\*        Done_:
-\*        while (TRUE) { skip; }
+        Done_:
+        while (TRUE) { skip; }
     }
 
     fair process (HClient \in AllHonest)
@@ -194,8 +196,9 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         while (TRUE) { skip; };
     }
 } *)
-\* BEGIN TRANSLATION (chksum(pcal) = "1ef1dac6" /\ chksum(tla) = "b6980118")
-\* Label s1 of process Server at line 93 col 13 changed to s1_
+\* BEGIN TRANSLATION (chksum(pcal) = "644c282a" /\ chksum(tla) = "cbec7d43")
+\* Label s1 of process Server at line 92 col 13 changed to s1_
+\* Label Done_ of process Server at line 139 col 9 changed to Done__
 \* Process variable id of process Server at line 88 col 9 changed to id_
 \* Process variable ip of process Server at line 89 col 9 changed to ip_
 VARIABLES BankAccount, Channels, seatMap, Tickets, CState, getFlag, pc
@@ -252,13 +255,13 @@ NoDoubleSell ==
 
 
 BadInv_NoRequestsToServer ==
-    getFlag = 0
+    Len(Channels[0]) <= 2
 
 
 
 AllDone ==
   /\ \A c \in AllHonest : CState[c] = "done"
-
+  /\ \A p \in AllParticipants : Len(Channels[p]) = 0
 
 Terminates == <>AllDone
 
@@ -304,11 +307,12 @@ WW == /\ pc[0] = "WW"
                       availSeats >>
 
 GET == /\ pc[0] = "GET"
+       /\ getFlag' = 1
        /\ internalReq' = Head(Channels[0])
        /\ Channels' = [Channels EXCEPT ![ip_] = Tail(Channels[0])]
        /\ pc' = [pc EXCEPT ![0] = "TREAT"]
-       /\ UNCHANGED << BankAccount, seatMap, Tickets, CState, getFlag, id_, 
-                       ip_, id, ip, wantSeat, reply, target, availSeats >>
+       /\ UNCHANGED << BankAccount, seatMap, Tickets, CState, id_, ip_, id, ip, 
+                       wantSeat, reply, target, availSeats >>
 
 TREAT == /\ pc[0] = "TREAT"
          /\ IF internalReq.type = "buy"
@@ -325,22 +329,26 @@ TREAT == /\ pc[0] = "TREAT"
                                                                                              from |-> 0,
                                                                                              seat |-> internalReq.seat,
                                                                                              bankID |-> -2])]
-                               /\ UNCHANGED getFlag
                           ELSE /\ Channels' = [Channels EXCEPT ![internalReq.from] = Append(Channels[internalReq.from],
                                                                                             [type |-> "deny",
                                                                                              from |-> 0,
                                                                                              seat |-> internalReq.seat,
                                                                                              bankID |-> -2])]
-                               /\ getFlag' = 1
                                /\ UNCHANGED << BankAccount, seatMap, Tickets >>
                ELSE /\ TRUE
-                    /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, 
-                                    getFlag >>
+                    /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets >>
          /\ pc' = [pc EXCEPT ![0] = "s1_"]
-         /\ UNCHANGED << CState, id_, ip_, internalReq, id, ip, wantSeat, 
-                         reply, target, availSeats >>
+         /\ UNCHANGED << CState, getFlag, id_, ip_, internalReq, id, ip, 
+                         wantSeat, reply, target, availSeats >>
 
-Server == s1_ \/ WW \/ GET \/ TREAT
+Done__ == /\ pc[0] = "Done__"
+          /\ TRUE
+          /\ pc' = [pc EXCEPT ![0] = "Done__"]
+          /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, CState, 
+                          getFlag, id_, ip_, internalReq, id, ip, wantSeat, 
+                          reply, target, availSeats >>
+
+Server == s1_ \/ WW \/ GET \/ TREAT \/ Done__
 
 InitTarget(self) == /\ pc[self] = "InitTarget"
                     /\ target' = [target EXCEPT ![self] = CHOOSE k \in 1..Min2(INITMONEY, NUMSEATS) : TRUE]
@@ -422,12 +430,19 @@ HClient(self) == InitTarget(self) \/ s1(self) \/ CheckDone(self)
                     \/ BWaitIdle(self) \/ BSend(self) \/ BWaitReply(self)
                     \/ BBuying(self) \/ BUpdate(self) \/ Done_(self)
 
+(* Allow infinite stuttering to prevent deadlock on termination. *)
+Terminating == /\ \A self \in ProcSet: pc[self] = "Done"
+               /\ UNCHANGED vars
+
 Next == Server
            \/ (\E self \in AllHonest: HClient(self))
+           \/ Terminating
 
 Spec == /\ Init /\ [][Next]_vars
         /\ WF_vars(Server)
         /\ \A self \in AllHonest : WF_vars(HClient(self))
+
+Termination == <>(\A self \in ProcSet: pc[self] = "Done")
 
 \* END TRANSLATION 
 

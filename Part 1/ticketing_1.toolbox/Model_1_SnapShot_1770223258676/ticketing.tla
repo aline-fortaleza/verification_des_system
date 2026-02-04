@@ -16,6 +16,8 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         Tickets     = [c \in 1..NUMCLIENTS |-> {}];
 
         CState      = [c \in 1..NUMCLIENTS |-> "idle"];
+        
+        getFlag = 0; 
 
     define {
 
@@ -68,7 +70,9 @@ Min2(a, b) == IF a <= b THEN a ELSE b
           \A s \in Seats :
             Cardinality({c \in AllHonest : s \in Tickets[c]}) <= 1
             
-
+        \* Intencionalmente FALSA: quebra logo após o 1º buy ser enviado ao servidor
+        BadInv_NoRequestsToServer ==
+            getFlag = 0
          \*-----------------------------
         \* Stop condition
         \* -----------------------------
@@ -125,7 +129,8 @@ Min2(a, b) == IF a <= b THEN a ELSE b
                                 from |-> 0,
                                 seat |-> internalReq.seat,
                                 bankID |-> -2]);
-
+                    
+                   getFlag := 1;
                 }
 
             } else {
