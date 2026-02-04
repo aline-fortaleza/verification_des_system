@@ -2,19 +2,19 @@
 TLC2 Version 2.16 of 31 December 2020 (rev: cdddf55)
 @!@!@ENDMSG 2262 @!@!@
 @!@!@STARTMSG 2187:0 @!@!@
-Running breadth-first search Model-Checking with fp 62 and seed 3862969056649339224 with 4 workers on 8 cores with 564MB heap and 1266MB offheap memory [pid: 21813] (Linux 6.8.0-90-generic amd64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
+Running breadth-first search Model-Checking with fp 118 and seed 580341571620372769 with 4 workers on 4 cores with 608MB heap and 1365MB offheap memory [pid: 54265] (Mac OS X 10.16 x86_64, AdoptOpenJDK 14.0.1 x86_64, OffHeapDiskFPSet, DiskStateQueue).
 @!@!@ENDMSG 2187 @!@!@
 @!@!@STARTMSG 2220:0 @!@!@
 Starting SANY...
 @!@!@ENDMSG 2220 @!@!@
-Parsing file /home/aline_fortaleza/Documents/classes_TSP/verificationSystems/project/verification_des_system/Part3_2/ticketing3_2.toolbox/Model_1/MC.tla
-Parsing file /home/aline_fortaleza/Documents/classes_TSP/verificationSystems/project/verification_des_system/Part3_2/ticketing3_2.toolbox/Model_1/ticketing3_2.tla
+Parsing file /Users/BiaLeao/Documents/verification_des_system/Part3_2/ticketing3_2.toolbox/Model_1/MC.tla
+Parsing file /Users/BiaLeao/Documents/verification_des_system/Part3_2/ticketing3_2.toolbox/Model_1/ticketing3_2.tla
 Warning: symbols were renamed.
-Parsing file /home/aline_fortaleza/Documents/TLA/toolbox/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/TLC.tla
-Parsing file /home/aline_fortaleza/Documents/TLA/toolbox/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Integers.tla
-Parsing file /home/aline_fortaleza/Documents/TLA/toolbox/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Sequences.tla
-Parsing file /home/aline_fortaleza/Documents/TLA/toolbox/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/FiniteSets.tla
-Parsing file /home/aline_fortaleza/Documents/TLA/toolbox/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Naturals.tla
+Parsing file /Applications/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/TLC.tla
+Parsing file /Applications/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Integers.tla
+Parsing file /Applications/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Sequences.tla
+Parsing file /Applications/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/FiniteSets.tla
+Parsing file /Applications/TLA+ Toolbox.app/Contents/Eclipse/plugins/org.lamport.tlatools_1.0.0.202012311918/tla2sany/StandardModules/Naturals.tla
 Semantic processing of module Naturals
 Semantic processing of module Integers
 Semantic processing of module Sequences
@@ -26,7 +26,7 @@ Semantic processing of module MC
 SANY finished.
 @!@!@ENDMSG 2219 @!@!@
 @!@!@STARTMSG 2185:0 @!@!@
-Starting... (2026-02-03 17:31:35)
+Starting... (2026-02-04 22:11:11)
 @!@!@ENDMSG 2185 @!@!@
 @!@!@STARTMSG 2212:0 @!@!@
 Implied-temporal checking--satisfiability problem has 1 branches.
@@ -35,762 +35,804 @@ Implied-temporal checking--satisfiability problem has 1 branches.
 Computing initial states...
 @!@!@ENDMSG 2189 @!@!@
 @!@!@STARTMSG 2190:0 @!@!@
-Finished computing initial states: 1 distinct state generated at 2026-02-03 17:31:36.
+Finished computing initial states: 1 distinct state generated at 2026-02-04 22:11:14.
 @!@!@ENDMSG 2190 @!@!@
 @!@!@STARTMSG 2192:0 @!@!@
-Checking temporal properties for the current state space with 13380 total distinct states at (2026-02-03 17:31:39)
+Checking temporal properties for the current state space with 2775 total distinct states at (2026-02-04 22:11:17)
 @!@!@ENDMSG 2192 @!@!@
 @!@!@STARTMSG 2267:0 @!@!@
-Finished checking temporal properties in 00s at 2026-02-03 17:31:39
+Finished checking temporal properties in 00s at 2026-02-04 22:11:17
 @!@!@ENDMSG 2267 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(10) at 2026-02-03 17:31:39: 45,735 states generated (45,735 s/min), 13,380 distinct states found (13,380 ds/min), 3,791 states left on queue.
-@!@!@ENDMSG 2200 @!@!@
-@!@!@STARTMSG 2200:0 @!@!@
-Progress(20) at 2026-02-03 17:31:41: 131,184 states generated, 31,002 distinct states found, 0 states left on queue.
+Progress(21) at 2026-02-04 22:11:17: 8,330 states generated (8,330 s/min), 2,775 distinct states found (2,775 ds/min), 345 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2192:0 @!@!@
-Checking temporal properties for the complete state space with 31002 total distinct states at (2026-02-03 17:31:41)
+Checking temporal properties for the current state space with 248629 total distinct states at (2026-02-04 22:12:17)
 @!@!@ENDMSG 2192 @!@!@
 @!@!@STARTMSG 2267:0 @!@!@
-Finished checking temporal properties in 00s at 2026-02-03 17:31:41
+Finished checking temporal properties in 04s at 2026-02-04 22:12:22
+@!@!@ENDMSG 2267 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(70) at 2026-02-04 22:12:22: 755,422 states generated (747,092 s/min), 248,635 distinct states found (245,860 ds/min), 7,828 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2200:0 @!@!@
+Progress(90) at 2026-02-04 22:12:35: 942,278 states generated, 303,290 distinct states found, 0 states left on queue.
+@!@!@ENDMSG 2200 @!@!@
+@!@!@STARTMSG 2192:0 @!@!@
+Checking temporal properties for the complete state space with 303290 total distinct states at (2026-02-04 22:12:35)
+@!@!@ENDMSG 2192 @!@!@
+@!@!@STARTMSG 2267:0 @!@!@
+Finished checking temporal properties in 06s at 2026-02-04 22:12:42
 @!@!@ENDMSG 2267 @!@!@
 @!@!@STARTMSG 2193:0 @!@!@
 Model checking completed. No error has been found.
   Estimates of the probability that TLC did not check all reachable states
   because two distinct states had the same fingerprint:
-  calculated (optimistic):  val = 1.7E-10
-  based on the actual fingerprints:  val = 2.0E-11
+  calculated (optimistic):  val = 1.1E-8
+  based on the actual fingerprints:  val = 2.5E-9
 @!@!@ENDMSG 2193 @!@!@
 @!@!@STARTMSG 2201:0 @!@!@
-The coverage statistics at 2026-02-03 17:31:43
+The coverage statistics at 2026-02-04 22:12:47
 @!@!@ENDMSG 2201 @!@!@
 @!@!@STARTMSG 2773:0 @!@!@
-<Init line 487, col 1 to line 487, col 4 of module ticketing3_2>: 1:1
+<Init line 446, col 1 to line 446, col 4 of module ticketing3_2>: 1:1
 @!@!@ENDMSG 2773 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 488, col 9 to line 516, col 76 of module ticketing3_2: 1
+  line 447, col 9 to line 466, col 78 of module ticketing3_2: 1
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<s1_ line 518, col 1 to line 518, col 3 of module ticketing3_2>: 3901:11383
+<s1_ line 468, col 1 to line 468, col 3 of module ticketing3_2>: 8842:87657
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 518, col 11 to line 518, col 23 of module ticketing3_2: 42386
+  line 468, col 11 to line 468, col 23 of module ticketing3_2: 390950
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 518, col 11 to line 518, col 15 of module ticketing3_2: 31003
+  |line 468, col 11 to line 468, col 15 of module ticketing3_2: 303293
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 519, col 14 to line 519, col 21 of module ticketing3_2: 11383
+  line 469, col 14 to line 469, col 21 of module ticketing3_2: 87657
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 519, col 15 to line 519, col 21 of module ticketing3_2: 11383
+  |line 469, col 15 to line 469, col 21 of module ticketing3_2: 87657
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 472, col 3 to line 472, col 44 of module ticketing3_2: 11383
+  ||line 433, col 3 to line 433, col 44 of module ticketing3_2: 87657
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 472, col 6 to line 472, col 44 of module ticketing3_2: 11383
+  |||line 433, col 6 to line 433, col 44 of module ticketing3_2: 87657
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 472, col 27 to line 472, col 44 of module ticketing3_2: 17769
+  ||||line 433, col 27 to line 433, col 44 of module ticketing3_2: 102515
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 472, col 15 to line 472, col 23 of module ticketing3_2: 11383
+  ||||line 433, col 15 to line 433, col 23 of module ticketing3_2: 87657
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 520, col 19 to line 520, col 50 of module ticketing3_2: 10647
+  line 470, col 19 to line 470, col 50 of module ticketing3_2: 87513
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 521, col 19 to line 521, col 54 of module ticketing3_2: 736
+  line 471, col 19 to line 471, col 52 of module ticketing3_2: 144
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 522, col 11 to line 525, col 80 of module ticketing3_2: 11383
+  line 472, col 11 to line 474, col 56 of module ticketing3_2: 87657
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<WW line 527, col 1 to line 527, col 2 of module ticketing3_2>: 3704:3750
+<WW line 476, col 1 to line 476, col 2 of module ticketing3_2>: 10853:25488
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 527, col 10 to line 527, col 21 of module ticketing3_2: 34753
+  line 476, col 10 to line 476, col 21 of module ticketing3_2: 328781
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 527, col 10 to line 527, col 14 of module ticketing3_2: 31003
+  |line 476, col 10 to line 476, col 14 of module ticketing3_2: 303293
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 528, col 11 to line 528, col 32 of module ticketing3_2: 3750
+  line 477, col 11 to line 477, col 30 of module ticketing3_2: 25344
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 528, col 11 to line 528, col 28 of module ticketing3_2: 11384
+  |line 477, col 11 to line 477, col 26 of module ticketing3_2: 87656
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 529, col 10 to line 529, col 39 of module ticketing3_2: 3750
+  line 433, col 27 to line 433, col 44 of module ticketing3_2: 102946
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 530, col 10 to line 533, col 79 of module ticketing3_2: 3750
+  |line 433, col 27 to line 433, col 35 of module ticketing3_2: 102514
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 433, col 15 to line 433, col 23 of module ticketing3_2: 87656
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 478, col 13 to line 478, col 19 of module ticketing3_2: 25488
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 433, col 3 to line 433, col 44 of module ticketing3_2: 25488
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 433, col 6 to line 433, col 44 of module ticketing3_2: 25488
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 433, col 27 to line 433, col 44 of module ticketing3_2: 28604
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 433, col 15 to line 433, col 23 of module ticketing3_2: 25488
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 479, col 18 to line 479, col 50 of module ticketing3_2: 144
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 480, col 18 to line 480, col 50 of module ticketing3_2: 25344
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 481, col 10 to line 483, col 50 of module ticketing3_2: 25488
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<GET line 535, col 1 to line 535, col 3 of module ticketing3_2>: 3702:3750
+<GET line 485, col 1 to line 485, col 3 of module ticketing3_2>: 8239:25344
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 535, col 11 to line 535, col 23 of module ticketing3_2: 34753
+  line 485, col 11 to line 485, col 23 of module ticketing3_2: 328637
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 535, col 11 to line 535, col 15 of module ticketing3_2: 31003
+  |line 485, col 11 to line 485, col 15 of module ticketing3_2: 303293
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 536, col 11 to line 536, col 44 of module ticketing3_2: 3750
+  line 486, col 11 to line 486, col 42 of module ticketing3_2: 25344
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 537, col 11 to line 537, col 68 of module ticketing3_2: 3750
+  line 487, col 11 to line 487, col 64 of module ticketing3_2: 25344
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 538, col 11 to line 538, col 42 of module ticketing3_2: 3750
+  line 488, col 11 to line 488, col 42 of module ticketing3_2: 25344
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 539, col 11 to line 542, col 55 of module ticketing3_2: 3750
+  line 489, col 11 to line 490, col 80 of module ticketing3_2: 25344
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<TREAT line 544, col 1 to line 544, col 5 of module ticketing3_2>: 3707:3750
+<TREAT line 492, col 1 to line 492, col 5 of module ticketing3_2>: 7263:16203
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 544, col 13 to line 544, col 27 of module ticketing3_2: 34753
+  line 492, col 13 to line 492, col 27 of module ticketing3_2: 319496
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 544, col 13 to line 544, col 17 of module ticketing3_2: 31003
+  |line 492, col 13 to line 492, col 17 of module ticketing3_2: 303293
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 545, col 16 to line 545, col 44 of module ticketing3_2: 3750
+  line 493, col 16 to line 493, col 43 of module ticketing3_2: 16203
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 548, col 35 to line 548, col 96 of module ticketing3_2: 0
+  line 494, col 27 to line 495, col 60 of module ticketing3_2: 7080
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 549, col 35 to line 551, col 139 of module ticketing3_2: 0
+  line 496, col 32 to line 499, col 170 of module ticketing3_2: 4404
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 552, col 35 to line 554, col 139 of module ticketing3_2: 0
+  line 500, col 35 to line 501, col 167 of module ticketing3_2: 2676
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 555, col 35 to line 555, col 46 of module ticketing3_2: 0
+  line 502, col 35 to line 502, col 67 of module ticketing3_2: 2676
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 556, col 24 to line 556, col 78 of module ticketing3_2: 0
+  line 503, col 24 to line 503, col 59 of module ticketing3_2: 7080
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 557, col 27 to line 557, col 54 of module ticketing3_2: 3750
+  line 504, col 27 to line 504, col 56 of module ticketing3_2: 9123
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 558, col 38 to line 560, col 79 of module ticketing3_2: 3750
+  line 507, col 46 to line 507, col 105 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 561, col 46 to line 561, col 105 of module ticketing3_2: 0
+  line 508, col 46 to line 508, col 99 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 562, col 46 to line 562, col 115 of module ticketing3_2: 0
+  line 509, col 46 to line 510, col 181 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 563, col 46 to line 566, col 158 of module ticketing3_2: 0
+  line 511, col 46 to line 512, col 178 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 567, col 49 to line 567, col 80 of module ticketing3_2: 3750
+  line 513, col 46 to line 513, col 78 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 568, col 54 to line 571, col 169 of module ticketing3_2: 3750
+  line 514, col 35 to line 514, col 70 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 572, col 57 to line 575, col 161 of module ticketing3_2: 0
+  line 515, col 38 to line 515, col 61 of module ticketing3_2: 9123
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 576, col 46 to line 576, col 78 of module ticketing3_2: 3750
+  line 516, col 49 to line 518, col 109 of module ticketing3_2: 9123
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 577, col 35 to line 577, col 70 of module ticketing3_2: 3750
+  line 519, col 54 to line 527, col 192 of module ticketing3_2: 9123
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 584, col 57 to line 584, col 112 of module ticketing3_2: 0
+  line 528, col 57 to line 529, col 189 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 585, col 57 to line 585, col 110 of module ticketing3_2: 0
+  line 530, col 57 to line 533, col 79 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 586, col 57 to line 588, col 87 of module ticketing3_2: 0
+  line 537, col 68 to line 537, col 127 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 589, col 57 to line 590, col 122 of module ticketing3_2: 0
+  line 538, col 68 to line 540, col 135 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 591, col 57 to line 594, col 169 of module ticketing3_2: 0
+  line 541, col 68 to line 542, col 126 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 596, col 68 to line 599, col 180 of module ticketing3_2: 0
+  line 543, col 68 to line 544, col 203 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 600, col 68 to line 603, col 172 of module ticketing3_2: 0
+  line 545, col 68 to line 546, col 200 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 604, col 57 to line 607, col 79 of module ticketing3_2: 0
+  line 547, col 68 to line 549, col 90 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 613, col 68 to line 613, col 128 of module ticketing3_2: 0
+  line 551, col 57 to line 554, col 79 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 614, col 68 to line 614, col 121 of module ticketing3_2: 0
+  line 555, col 46 to line 555, col 63 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 615, col 68 to line 618, col 180 of module ticketing3_2: 0
+  line 556, col 13 to line 556, col 42 of module ticketing3_2: 16203
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 620, col 79 to line 623, col 191 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 624, col 79 to line 627, col 183 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 628, col 68 to line 629, col 91 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 631, col 57 to line 633, col 80 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 634, col 46 to line 634, col 81 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 635, col 24 to line 635, col 35 of module ticketing3_2: 3750
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 636, col 13 to line 636, col 42 of module ticketing3_2: 3750
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 637, col 13 to line 640, col 38 of module ticketing3_2: 3750
+  line 557, col 13 to line 558, col 58 of module ticketing3_2: 16203
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<Done__ line 642, col 1 to line 642, col 6 of module ticketing3_2>: 0:736
+<End line 560, col 1 to line 560, col 3 of module ticketing3_2>: 9835:86289
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 642, col 14 to line 642, col 29 of module ticketing3_2: 31739
+  line 560, col 11 to line 560, col 23 of module ticketing3_2: 389582
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 642, col 14 to line 642, col 18 of module ticketing3_2: 31003
+  |line 560, col 11 to line 560, col 15 of module ticketing3_2: 303293
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 643, col 14 to line 643, col 17 of module ticketing3_2: 736
+  line 561, col 11 to line 561, col 14 of module ticketing3_2: 86289
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 644, col 14 to line 644, col 46 of module ticketing3_2: 736
+  line 562, col 11 to line 562, col 40 of module ticketing3_2: 86289
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 645, col 14 to line 649, col 39 of module ticketing3_2: 736
+  line 563, col 11 to line 565, col 56 of module ticketing3_2: 86289
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<InitTarget line 653, col 1 to line 653, col 16 of module ticketing3_2>: 64:18153
+<InitTarget line 569, col 1 to line 569, col 16 of module ticketing3_2>: 1829:9049
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 653, col 24 to line 653, col 46 of module ticketing3_2: 111162
+  line 569, col 24 to line 569, col 46 of module ticketing3_2: 918928
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 653, col 24 to line 653, col 31 of module ticketing3_2: 93009
+  |line 569, col 24 to line 569, col 31 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 654, col 24 to line 654, col 107 of module ticketing3_2: 18153
+  line 570, col 24 to line 570, col 107 of module ticketing3_2: 9049
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 655, col 24 to line 655, col 55 of module ticketing3_2: 18153
+  line 571, col 24 to line 571, col 55 of module ticketing3_2: 9049
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 656, col 24 to line 660, col 78 of module ticketing3_2: 18153
+  line 572, col 24 to line 575, col 49 of module ticketing3_2: 9049
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<s1 line 662, col 1 to line 662, col 8 of module ticketing3_2>: 751:37428
+<s1 line 577, col 1 to line 577, col 8 of module ticketing3_2>: 28859:74926
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 662, col 16 to line 662, col 30 of module ticketing3_2: 130437
+  line 577, col 16 to line 577, col 30 of module ticketing3_2: 984805
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 662, col 16 to line 662, col 23 of module ticketing3_2: 93009
+  |line 577, col 16 to line 577, col 23 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 663, col 19 to line 663, col 39 of module ticketing3_2: 37428
+  line 578, col 19 to line 578, col 39 of module ticketing3_2: 74926
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 664, col 24 to line 664, col 65 of module ticketing3_2: 18150
+  line 579, col 24 to line 579, col 65 of module ticketing3_2: 9043
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 665, col 24 to line 665, col 63 of module ticketing3_2: 19278
+  line 580, col 24 to line 580, col 60 of module ticketing3_2: 65883
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 666, col 16 to line 670, col 48 of module ticketing3_2: 37428
+  line 581, col 16 to line 583, col 64 of module ticketing3_2: 74926
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<CheckDone line 672, col 1 to line 672, col 15 of module ticketing3_2>: 584:18150
+<CheckDone line 585, col 1 to line 585, col 15 of module ticketing3_2>: 37052:90778
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 672, col 23 to line 672, col 44 of module ticketing3_2: 111159
+  line 585, col 23 to line 585, col 44 of module ticketing3_2: 1000657
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 672, col 23 to line 672, col 30 of module ticketing3_2: 93009
+  |line 585, col 23 to line 585, col 30 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 673, col 26 to line 674, col 66 of module ticketing3_2: 18150
+  line 586, col 26 to line 587, col 66 of module ticketing3_2: 90778
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 675, col 31 to line 676, col 65 of module ticketing3_2: 18150
+  |line 586, col 26 to line 586, col 67 of module ticketing3_2: 90778
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 677, col 40 to line 677, col 79 of module ticketing3_2: 0
+  |line 587, col 30 to line 587, col 65 of module ticketing3_2: 25111
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 678, col 40 to line 678, col 78 of module ticketing3_2: 0
+  ||line 587, col 47 to line 587, col 65 of module ticketing3_2: 45361
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 679, col 34 to line 679, col 49 of module ticketing3_2: 0
+  ||line 587, col 39 to line 587, col 43 of module ticketing3_2: 25111
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 680, col 23 to line 684, col 77 of module ticketing3_2: 18150
+  line 588, col 31 to line 589, col 65 of module ticketing3_2: 65667
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 590, col 34 to line 590, col 72 of module ticketing3_2: 25111
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 591, col 34 to line 591, col 49 of module ticketing3_2: 25111
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 592, col 23 to line 595, col 48 of module ticketing3_2: 90778
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<ChWaitIdle line 686, col 1 to line 686, col 16 of module ticketing3_2>: 0:0
+<BWaitIdle line 597, col 1 to line 597, col 15 of module ticketing3_2>: 10120:25110
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 686, col 24 to line 686, col 46 of module ticketing3_2: 93009
+  line 597, col 23 to line 597, col 44 of module ticketing3_2: 934989
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 688, col 24 to line 688, col 59 of module ticketing3_2: 0
+  |line 597, col 23 to line 597, col 30 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 689, col 24 to line 694, col 49 of module ticketing3_2: 0
+  line 598, col 24 to line 598, col 44 of module ticketing3_2: 50220
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 598, col 24 to line 598, col 35 of module ticketing3_2: 25110
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 599, col 23 to line 599, col 64 of module ticketing3_2: 25110
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 600, col 23 to line 603, col 48 of module ticketing3_2: 25110
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<ChSend line 696, col 1 to line 696, col 12 of module ticketing3_2>: 0:0
+<ActionChoice line 605, col 1 to line 605, col 18 of module ticketing3_2>: 10612:25110
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 696, col 20 to line 696, col 38 of module ticketing3_2: 93009
+  line 605, col 26 to line 605, col 50 of module ticketing3_2: 934989
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 697, col 20 to line 697, col 64 of module ticketing3_2: 0
+  |line 605, col 26 to line 605, col 33 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 698, col 20 to line 698, col 88 of module ticketing3_2: 0
+  line 606, col 29 to line 606, col 46 of module ticketing3_2: 25110
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 699, col 20 to line 699, col 80 of module ticketing3_2: 0
+  line 607, col 34 to line 607, col 77 of module ticketing3_2: 25110
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 700, col 20 to line 702, col 125 of module ticketing3_2: 0
+  line 608, col 43 to line 608, col 83 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 703, col 20 to line 703, col 55 of module ticketing3_2: 0
+  line 609, col 43 to line 609, col 83 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 704, col 20 to line 708, col 45 of module ticketing3_2: 0
+  line 610, col 26 to line 613, col 59 of module ticketing3_2: 25110
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<ChWait line 710, col 1 to line 710, col 12 of module ticketing3_2>: 0:0
+<BReserveBuy line 615, col 1 to line 615, col 17 of module ticketing3_2>: 10439:25110
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 710, col 20 to line 710, col 38 of module ticketing3_2: 93009
+  line 615, col 25 to line 615, col 48 of module ticketing3_2: 934989
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 712, col 20 to line 712, col 81 of module ticketing3_2: 0
+  |line 615, col 25 to line 615, col 32 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 713, col 20 to line 713, col 91 of module ticketing3_2: 0
+  line 616, col 25 to line 616, col 69 of module ticketing3_2: 25110
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 714, col 20 to line 714, col 55 of module ticketing3_2: 0
+  line 617, col 25 to line 617, col 108 of module ticketing3_2: 25110
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 715, col 20 to line 719, col 45 of module ticketing3_2: 0
+  |line 617, col 39 to line 617, col 108 of module ticketing3_2: 25110
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 617, col 40 to line 617, col 49 of module ticketing3_2: 25110
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 617, col 58 to line 617, col 107 of module ticketing3_2: 25110
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2775:0 @!@!@
+  ||line 617, col 68 to line 617, col 107 of module ticketing3_2: 25110:164964
+@!@!@ENDMSG 2775 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 617, col 83 to line 617, col 106 of module ticketing3_2: 251100
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |||line 617, col 75 to line 617, col 79 of module ticketing3_2: 25110
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 618, col 25 to line 619, col 86 of module ticketing3_2: 25110
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 620, col 25 to line 620, col 60 of module ticketing3_2: 25110
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 621, col 25 to line 623, col 69 of module ticketing3_2: 25110
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<ChDone line 721, col 1 to line 721, col 12 of module ticketing3_2>: 0:0
+<Label1 line 625, col 1 to line 625, col 12 of module ticketing3_2>: 14266:38004
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 721, col 20 to line 721, col 38 of module ticketing3_2: 93009
+  line 625, col 20 to line 625, col 38 of module ticketing3_2: 947883
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 722, col 20 to line 722, col 61 of module ticketing3_2: 0
+  |line 625, col 20 to line 625, col 27 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 723, col 20 to line 723, col 51 of module ticketing3_2: 0
+  line 626, col 23 to line 626, col 33 of module ticketing3_2: 38004
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 724, col 20 to line 728, col 52 of module ticketing3_2: 0
+  line 627, col 31 to line 627, col 72 of module ticketing3_2: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 628, col 31 to line 628, col 69 of module ticketing3_2: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 629, col 31 to line 629, col 66 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 630, col 31 to line 630, col 46 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 631, col 20 to line 633, col 79 of module ticketing3_2: 38004
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<BWaitIdle line 730, col 1 to line 730, col 15 of module ticketing3_2>: 0:0
+<Label2 line 635, col 1 to line 635, col 12 of module ticketing3_2>: 15178:38004
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 730, col 23 to line 730, col 44 of module ticketing3_2: 93009
+  line 635, col 20 to line 635, col 38 of module ticketing3_2: 947883
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 732, col 23 to line 732, col 64 of module ticketing3_2: 0
+  |line 635, col 20 to line 635, col 27 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 733, col 23 to line 737, col 81 of module ticketing3_2: 0
+  line 636, col 20 to line 636, col 63 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 637, col 20 to line 637, col 65 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 638, col 20 to line 638, col 57 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 639, col 20 to line 641, col 63 of module ticketing3_2: 38004
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<BSendReserve line 739, col 1 to line 739, col 18 of module ticketing3_2>: 0:0
+<PickLoop line 643, col 1 to line 643, col 14 of module ticketing3_2>: 35173:76008
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 739, col 26 to line 739, col 50 of module ticketing3_2: 93009
+  line 643, col 22 to line 643, col 42 of module ticketing3_2: 985887
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 740, col 26 to line 740, col 70 of module ticketing3_2: 0
+  |line 643, col 22 to line 643, col 29 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 741, col 26 to line 741, col 90 of module ticketing3_2: 0
+  line 644, col 25 to line 644, col 62 of module ticketing3_2: 76008
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 742, col 26 to line 744, col 131 of module ticketing3_2: 0
+  line 645, col 33 to line 645, col 101 of module ticketing3_2: 38004
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 745, col 26 to line 745, col 60 of module ticketing3_2: 0
+  line 646, col 33 to line 646, col 114 of module ticketing3_2: 38004
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 746, col 26 to line 750, col 70 of module ticketing3_2: 0
+  line 647, col 33 to line 647, col 91 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 648, col 33 to line 648, col 70 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 649, col 33 to line 649, col 50 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 650, col 33 to line 654, col 97 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 655, col 33 to line 655, col 74 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 656, col 33 to line 656, col 72 of module ticketing3_2: 38004
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 657, col 22 to line 659, col 55 of module ticketing3_2: 76008
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<RWait line 752, col 1 to line 752, col 11 of module ticketing3_2>: 0:0
+<WaitResReply line 661, col 1 to line 661, col 18 of module ticketing3_2>: 15310:89496
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 752, col 19 to line 752, col 36 of module ticketing3_2: 93009
+  line 661, col 26 to line 661, col 50 of module ticketing3_2: 999375
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 754, col 19 to line 754, col 80 of module ticketing3_2: 0
+  |line 661, col 26 to line 661, col 33 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 755, col 19 to line 755, col 90 of module ticketing3_2: 0
+  line 662, col 26 to line 662, col 52 of module ticketing3_2: 89496
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 756, col 19 to line 756, col 91 of module ticketing3_2: 0
+  |line 662, col 26 to line 662, col 48 of module ticketing3_2: 153642
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 757, col 19 to line 757, col 59 of module ticketing3_2: 0
+  line 663, col 26 to line 663, col 83 of module ticketing3_2: 89496
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 758, col 19 to line 761, col 73 of module ticketing3_2: 0
+  line 664, col 26 to line 664, col 93 of module ticketing3_2: 89496
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 665, col 26 to line 665, col 61 of module ticketing3_2: 89496
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 666, col 26 to line 668, col 78 of module ticketing3_2: 89496
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<PostReserve line 763, col 1 to line 763, col 17 of module ticketing3_2>: 0:0
+<Label3 line 670, col 1 to line 670, col 12 of module ticketing3_2>: 27924:62292
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 763, col 25 to line 763, col 48 of module ticketing3_2: 93009
+  line 670, col 20 to line 670, col 38 of module ticketing3_2: 972171
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 765, col 36 to line 765, col 97 of module ticketing3_2: 0
+  |line 670, col 20 to line 670, col 27 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 767, col 47 to line 767, col 86 of module ticketing3_2: 0
+  line 671, col 23 to line 671, col 50 of module ticketing3_2: 62292
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 768, col 47 to line 768, col 83 of module ticketing3_2: 0
+  line 672, col 28 to line 677, col 72 of module ticketing3_2: 46224
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 770, col 36 to line 770, col 80 of module ticketing3_2: 0
+  line 678, col 31 to line 678, col 66 of module ticketing3_2: 16068
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 771, col 36 to line 771, col 57 of module ticketing3_2: 0
+  line 679, col 31 to line 679, col 48 of module ticketing3_2: 16068
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 772, col 25 to line 776, col 69 of module ticketing3_2: 0
+  line 680, col 20 to line 682, col 79 of module ticketing3_2: 62292
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<PostWait line 778, col 1 to line 778, col 14 of module ticketing3_2>: 0:0
+<WaitBuyReply line 684, col 1 to line 684, col 18 of module ticketing3_2>: 19762:65667
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 778, col 22 to line 778, col 42 of module ticketing3_2: 93009
+  line 684, col 26 to line 684, col 50 of module ticketing3_2: 975546
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 780, col 22 to line 780, col 83 of module ticketing3_2: 0
+  |line 684, col 26 to line 684, col 33 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 781, col 22 to line 781, col 93 of module ticketing3_2: 0
+  line 685, col 26 to line 685, col 52 of module ticketing3_2: 65667
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 782, col 22 to line 782, col 66 of module ticketing3_2: 0
+  |line 685, col 26 to line 685, col 48 of module ticketing3_2: 144228
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 783, col 22 to line 787, col 66 of module ticketing3_2: 0
+  line 686, col 26 to line 686, col 83 of module ticketing3_2: 65667
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 687, col 26 to line 687, col 93 of module ticketing3_2: 65667
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 688, col 26 to line 688, col 61 of module ticketing3_2: 65667
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 689, col 26 to line 691, col 78 of module ticketing3_2: 65667
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<CancelSend line 789, col 1 to line 789, col 16 of module ticketing3_2>: 0:0
+<Label4 line 693, col 1 to line 693, col 12 of module ticketing3_2>: 31733:81735
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 789, col 24 to line 789, col 46 of module ticketing3_2: 93009
+  line 693, col 20 to line 693, col 38 of module ticketing3_2: 991614
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 790, col 24 to line 792, col 129 of module ticketing3_2: 0
+  |line 693, col 20 to line 693, col 27 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 793, col 24 to line 793, col 61 of module ticketing3_2: 0
+  line 694, col 20 to line 694, col 61 of module ticketing3_2: 81735
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 794, col 24 to line 798, col 78 of module ticketing3_2: 0
+  line 695, col 20 to line 695, col 58 of module ticketing3_2: 81735
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 696, col 20 to line 698, col 79 of module ticketing3_2: 81735
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<PaySend line 800, col 1 to line 800, col 13 of module ticketing3_2>: 0:0
+<BCancelPaid line 700, col 1 to line 700, col 17 of module ticketing3_2>: 0:0
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 800, col 21 to line 800, col 40 of module ticketing3_2: 93009
+  line 700, col 25 to line 700, col 48 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 801, col 21 to line 803, col 126 of module ticketing3_2: 0
+  line 702, col 36 to line 702, col 77 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 804, col 21 to line 804, col 58 of module ticketing3_2: 0
+  line 703, col 36 to line 703, col 74 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 805, col 21 to line 809, col 53 of module ticketing3_2: 0
+  line 704, col 36 to line 704, col 71 of module ticketing3_2: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 705, col 36 to line 705, col 51 of module ticketing3_2: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 706, col 25 to line 709, col 50 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<JoinAfterChoice line 811, col 1 to line 811, col 21 of module ticketing3_2>: 0:0
+<Label5 line 711, col 1 to line 711, col 12 of module ticketing3_2>: 0:0
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 811, col 29 to line 811, col 56 of module ticketing3_2: 93009
+  line 711, col 20 to line 711, col 38 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 812, col 29 to line 812, col 70 of module ticketing3_2: 0
+  line 712, col 20 to line 712, col 64 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 813, col 29 to line 813, col 60 of module ticketing3_2: 0
+  line 713, col 20 to line 713, col 92 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 814, col 29 to line 819, col 73 of module ticketing3_2: 0
+  line 714, col 20 to line 714, col 78 of module ticketing3_2: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 715, col 20 to line 719, col 84 of module ticketing3_2: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 720, col 20 to line 720, col 64 of module ticketing3_2: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 721, col 20 to line 723, col 45 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<Done__H line 821, col 1 to line 821, col 13 of module ticketing3_2>: 0:19278
+<WaitCancelReply line 725, col 1 to line 725, col 21 of module ticketing3_2>: 0:0
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 821, col 21 to line 821, col 40 of module ticketing3_2: 112287
+  line 725, col 29 to line 725, col 56 of module ticketing3_2: 909879
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 821, col 21 to line 821, col 28 of module ticketing3_2: 93009
+  line 727, col 29 to line 727, col 86 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 822, col 21 to line 822, col 24 of module ticketing3_2: 19278
+  line 728, col 29 to line 728, col 96 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 823, col 21 to line 823, col 57 of module ticketing3_2: 19278
+  line 729, col 29 to line 729, col 70 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 824, col 21 to line 828, col 75 of module ticketing3_2: 19278
+  line 730, col 29 to line 730, col 67 of module ticketing3_2: 0
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 731, col 29 to line 734, col 54 of module ticketing3_2: 0
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2772:0 @!@!@
-<MStep line 838, col 1 to line 838, col 11 of module ticketing3_2>: 6992:7074
+<Terminating line 745, col 1 to line 745, col 11 of module ticketing3_2>: 0:18
 @!@!@ENDMSG 2772 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 838, col 19 to line 838, col 36 of module ticketing3_2: 31262
+  line 745, col 40 to line 745, col 56 of module ticketing3_2: 303617
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 838, col 19 to line 838, col 26 of module ticketing3_2: 31003
+  |line 745, col 40 to line 745, col 47 of module ticketing3_2: 303545
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 839, col 22 to line 839, col 53 of module ticketing3_2: 259
+  line 745, col 31 to line 745, col 37 of module ticketing3_2: 303293
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 839, col 22 to line 839, col 41 of module ticketing3_2: 259
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 839, col 46 to line 839, col 53 of module ticketing3_2: 259
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  ||line 839, col 47 to line 839, col 53 of module ticketing3_2: 259
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |||line 472, col 3 to line 472, col 44 of module ticketing3_2: 259
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  ||||line 472, col 6 to line 472, col 44 of module ticketing3_2: 259
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |||||line 472, col 27 to line 472, col 44 of module ticketing3_2: 415
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |||||line 472, col 15 to line 472, col 23 of module ticketing3_2: 259
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 842, col 34 to line 843, col 81 of module ticketing3_2: 7050
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 841, col 41 to line 841, col 45 of module ticketing3_2: 705
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 840, col 39 to line 840, col 47 of module ticketing3_2: 235
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 844, col 30 to line 844, col 64 of module ticketing3_2: 7050
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 845, col 30 to line 845, col 64 of module ticketing3_2: 24
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 846, col 30 to line 846, col 65 of module ticketing3_2: 24
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 847, col 19 to line 851, col 44 of module ticketing3_2: 7074
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2772:0 @!@!@
-<MSend line 853, col 1 to line 853, col 11 of module ticketing3_2>: 7596:7740
-@!@!@ENDMSG 2772 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 853, col 19 to line 853, col 36 of module ticketing3_2: 38743
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 853, col 19 to line 853, col 26 of module ticketing3_2: 31003
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 854, col 19 to line 856, col 126 of module ticketing3_2: 7740
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 857, col 19 to line 857, col 82 of module ticketing3_2: 7740
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 858, col 19 to line 858, col 57 of module ticketing3_2: 7740
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 859, col 19 to line 863, col 39 of module ticketing3_2: 7740
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2772:0 @!@!@
-<MGetReply line 865, col 1 to line 865, col 15 of module ticketing3_2>: 0:0
-@!@!@ENDMSG 2772 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 865, col 23 to line 865, col 44 of module ticketing3_2: 31003
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 866, col 24 to line 866, col 50 of module ticketing3_2: 22980
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 867, col 23 to line 867, col 80 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 868, col 23 to line 868, col 90 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 869, col 23 to line 869, col 58 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 870, col 23 to line 874, col 70 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2772:0 @!@!@
-<MStore line 876, col 1 to line 876, col 12 of module ticketing3_2>: 0:0
-@!@!@ENDMSG 2772 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 876, col 20 to line 876, col 38 of module ticketing3_2: 31003
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 878, col 31 to line 878, col 111 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 880, col 31 to line 880, col 49 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 881, col 20 to line 881, col 54 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 882, col 20 to line 886, col 52 of module ticketing3_2: 0
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2772:0 @!@!@
-<Done_ line 888, col 1 to line 888, col 11 of module ticketing3_2>: 0:24
-@!@!@ENDMSG 2772 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 888, col 19 to line 888, col 36 of module ticketing3_2: 31027
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  |line 888, col 19 to line 888, col 26 of module ticketing3_2: 31003
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 889, col 19 to line 889, col 22 of module ticketing3_2: 24
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 890, col 19 to line 890, col 53 of module ticketing3_2: 24
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 891, col 19 to line 895, col 63 of module ticketing3_2: 24
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2772:0 @!@!@
-<Terminating line 901, col 1 to line 901, col 11 of module ticketing3_2>: 0:0
-@!@!@ENDMSG 2772 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 901, col 19 to line 901, col 56 of module ticketing3_2: 31003
-@!@!@ENDMSG 2221 @!@!@
-@!@!@STARTMSG 2221:0 @!@!@
-  line 902, col 19 to line 902, col 32 of module ticketing3_2: 0
+  line 746, col 19 to line 746, col 32 of module ticketing3_2: 18
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
-<TypeOK line 442, col 1 to line 442, col 6 of module ticketing3_2>
+<TypeOK line 402, col 1 to line 402, col 6 of module ticketing3_2>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 443, col 3 to line 450, col 32 of module ticketing3_2: 31002
+  line 403, col 3 to line 408, col 56 of module ticketing3_2: 303290
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
-<MoneyTicketsInv line 452, col 1 to line 452, col 15 of module ticketing3_2>
+<MoneyTicketsInv line 410, col 1 to line 410, col 15 of module ticketing3_2>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 453, col 3 to line 454, col 56 of module ticketing3_2: 31002
+  line 411, col 3 to line 412, col 56 of module ticketing3_2: 303290
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 454, col 5 to line 454, col 56 of module ticketing3_2: 93006
+  |line 412, col 5 to line 412, col 56 of module ticketing3_2: 909870
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 453, col 12 to line 453, col 20 of module ticketing3_2: 31002
+  |line 411, col 12 to line 411, col 20 of module ticketing3_2: 303290
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
-<TicketsPaidInv line 456, col 1 to line 456, col 14 of module ticketing3_2>
+<TicketsPaidInv line 414, col 1 to line 414, col 14 of module ticketing3_2>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 457, col 3 to line 458, col 45 of module ticketing3_2: 31002
+  line 415, col 3 to line 416, col 45 of module ticketing3_2: 303290
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 458, col 5 to line 458, col 45 of module ticketing3_2: 93006
+  |line 416, col 5 to line 416, col 45 of module ticketing3_2: 909870
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 457, col 12 to line 457, col 20 of module ticketing3_2: 31002
+  ||line 416, col 27 to line 416, col 45 of module ticketing3_2: 328767
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 416, col 14 to line 416, col 23 of module ticketing3_2: 909870
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 415, col 12 to line 415, col 20 of module ticketing3_2: 303290
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
-<NoDoubleSell line 460, col 1 to line 460, col 12 of module ticketing3_2>
+<NoDoubleSell line 418, col 1 to line 418, col 12 of module ticketing3_2>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 461, col 3 to line 462, col 58 of module ticketing3_2: 31002
+  line 419, col 3 to line 420, col 58 of module ticketing3_2: 303290
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 462, col 5 to line 462, col 58 of module ticketing3_2: 310020
+  |line 420, col 5 to line 420, col 58 of module ticketing3_2: 3032900
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||line 462, col 5 to line 462, col 53 of module ticketing3_2: 310020
+  ||line 420, col 5 to line 420, col 53 of module ticketing3_2: 3032900
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |||line 462, col 17 to line 462, col 52 of module ticketing3_2: 310020
+  |||line 420, col 17 to line 420, col 52 of module ticketing3_2: 3032900
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 462, col 36 to line 462, col 51 of module ticketing3_2: 930060
+  ||||line 420, col 36 to line 420, col 51 of module ticketing3_2: 9098700
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  ||||line 462, col 24 to line 462, col 32 of module ticketing3_2: 310020
+  ||||line 420, col 24 to line 420, col 32 of module ticketing3_2: 3032900
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  |line 461, col 12 to line 461, col 16 of module ticketing3_2: 31002
+  |line 419, col 12 to line 419, col 16 of module ticketing3_2: 303290
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2774:0 @!@!@
-<MaliciousHasNoTickets line 465, col 1 to line 465, col 21 of module ticketing3_2>
+<ReservedConsistent line 423, col 1 to line 423, col 18 of module ticketing3_2>
 @!@!@ENDMSG 2774 @!@!@
 @!@!@STARTMSG 2221:0 @!@!@
-  line 466, col 3 to line 466, col 43 of module ticketing3_2: 31002
+  line 424, col 3 to line 425, col 61 of module ticketing3_2: 303290
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 425, col 5 to line 425, col 61 of module ticketing3_2: 3032900
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 425, col 6 to line 425, col 28 of module ticketing3_2: 3032900
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 425, col 35 to line 425, col 60 of module ticketing3_2: 195105
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 424, col 12 to line 424, col 16 of module ticketing3_2: 303290
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2774:0 @!@!@
+<PaidNoOwner line 427, col 1 to line 427, col 11 of module ticketing3_2>
+@!@!@ENDMSG 2774 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  line 428, col 3 to line 429, col 43 of module ticketing3_2: 303290
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 429, col 5 to line 429, col 43 of module ticketing3_2: 3032900
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 429, col 5 to line 429, col 23 of module ticketing3_2: 3032900
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  ||line 429, col 28 to line 429, col 43 of module ticketing3_2: 328767
+@!@!@ENDMSG 2221 @!@!@
+@!@!@STARTMSG 2221:0 @!@!@
+  |line 428, col 12 to line 428, col 16 of module ticketing3_2: 303290
 @!@!@ENDMSG 2221 @!@!@
 @!@!@STARTMSG 2202:0 @!@!@
 End of statistics.
 @!@!@ENDMSG 2202 @!@!@
 @!@!@STARTMSG 2200:0 @!@!@
-Progress(20) at 2026-02-03 17:31:43: 131,184 states generated (951,298 s/min), 31,002 distinct states found (224,815 ds/min), 0 states left on queue.
+Progress(90) at 2026-02-04 22:12:47: 942,278 states generated (579,399 s/min), 303,290 distinct states found (186,490 ds/min), 0 states left on queue.
 @!@!@ENDMSG 2200 @!@!@
 @!@!@STARTMSG 2199:0 @!@!@
-131184 states generated, 31002 distinct states found, 0 states left on queue.
+942278 states generated, 303290 distinct states found, 0 states left on queue.
 @!@!@ENDMSG 2199 @!@!@
 @!@!@STARTMSG 2194:0 @!@!@
-The depth of the complete state graph search is 20.
+The depth of the complete state graph search is 90.
 @!@!@ENDMSG 2194 @!@!@
 @!@!@STARTMSG 2268:0 @!@!@
-The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 31 and the 95th percentile is 1).
+The average outdegree of the complete state graph is 1 (minimum is 0, the maximum 4 and the 95th percentile is 2).
 @!@!@ENDMSG 2268 @!@!@
 @!@!@STARTMSG 2186:0 @!@!@
-Finished in 8278ms at (2026-02-03 17:31:43)
+Finished in 97595ms at (2026-02-04 22:12:47)
 @!@!@ENDMSG 2186 @!@!@
