@@ -38,7 +38,7 @@ Min2(a, b) == IF a <= b THEN a ELSE b
 
         M0 == [type |-> "buy",
                from |-> 0,
-               seat |-> 1,
+               seat |-> 0,
                bankID |-> 0]
 
         Money(p) == BankAccount[p]
@@ -67,13 +67,14 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         NoDoubleSell ==
           \A s \in Seats :
             Cardinality({c \in AllHonest : s \in Tickets[c]}) <= 1
+            
 
-        \* -----------------------------
+         \*-----------------------------
         \* Stop condition
         \* -----------------------------
         AllDone ==
           /\ \A c \in AllHonest : CState[c] = "done"
-          /\ \A p \in AllParticipants : Len(Channels[p]) = 0
+\*          /\ \A p \in AllParticipants : Len(Channels[p]) = 0
 
         Terminates == <>AllDone
     }
@@ -83,21 +84,22 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         id = 0;
         ip = 0;
         internalReq = M0;
-    {
-        s1: while (~AllDone) {
-
+        
+    {   
+        s1: while (TRUE) {
             WW:
-            await (Len(Channels[ip]) > 0);
+            await Len(Channels[0]) > 0;
+            
 
             GET:
-            internalReq := Head(Channels[ip]);
-            Channels[ip] := Tail(Channels[ip]);
-
+            internalReq := Head(Channels[0]);
+            Channels[ip] := Tail(Channels[0]);
+         
+            
             TREAT:
             if (internalReq.type = "buy") {
 
                 if ( seatMap[internalReq.seat] = "available"
-                     /\ internalReq.bankID \in AllHonest
                      /\ BankAccount[internalReq.bankID] > 0) {
 
                     
@@ -123,30 +125,41 @@ Min2(a, b) == IF a <= b THEN a ELSE b
                                 from |-> 0,
                                 seat |-> internalReq.seat,
                                 bankID |-> -2]);
+
                 }
 
-            } else {
-                skip; \* without cancel for now
-            };
+            } else if (internalReq.type = "cancel") {
+                if (seatMap[internalReq.seat] = "paid") {
+                    seatMap[internalReq.seat] := "available";
+                    BankAccount := [BankAccount EXCEPT ![internalReq.bankID] = BankAccount[internalReq.bankID] + 1,
+                                                       ![0] = BankAccount[0] - 1];
+                    Channels[internalReq.from] := Append(Channels[internalReq.from], 
+                                                 [type |-> "confirm", 
+                                                  from |-> 0, 
+                                                  seat |-> internalReq.seat, 
+                                                  bankID |-> -2]);
+                } else {
+                    Channels[internalReq.from] := Append(Channels[internalReq.from], 
+                                                 [type |-> "deny", 
+                                                  from |-> 0, 
+                                                  seat |-> internalReq.seat, 
+                                                  bankID |-> -2]);
+                }
+            }
         };
-
-        Done_:
-        while (TRUE) { skip; }
     }
 
     fair process (HClient \in AllHonest)
     variables
         id = self;
         ip = self;
-
         wantSeat = 1;
         reply = M0;
-
         target = 0;
         availSeats = {};
     {
         InitTarget:
-        target := CHOOSE k \in 0..Min2(INITMONEY, NUMSEATS) : TRUE;
+        target := CHOOSE k \in 1..Min2(INITMONEY, NUMSEATS) : TRUE;
 
         s1: while (CState[self] # "done") {
 
@@ -159,27 +172,59 @@ Min2(a, b) == IF a <= b THEN a ELSE b
                 BWaitIdle:
                 await (CState[self] = "idle");
 
-                BSend:
-                CState[self] := "waiting";
-
-                
-                availSeats := {s \in Seats : seatMap[s] = "available"};
-                wantSeat := CHOOSE s \in availSeats : TRUE;
-
-                Channels[0] := Append(Channels[0],
-                                     [type |-> "buy",
-                                      from |-> ip,
-                                      seat |-> wantSeat,
-                                      bankID |-> id]);
+                ActionChoice:
+                either {
+                    
+                    BSendBuy:
+                    CState[self] := "waiting";
+                    
+                    availSeats := {s \in Seats : seatMap[s] = "available"};
+                    if (availSeats # {}) {
+                        wantSeat := CHOOSE s \in availSeats : TRUE;
+                        Channels[0] := Append(Channels[0],
+                                             [type |-> "buy",
+                                              from |-> ip,
+                                              seat |-> wantSeat,
+                                              bankID |-> id]);
+                    } else {
+                    
+                        BNoSeats:           
+                        CState[self] := "idle";
+                        goto CheckDone;
+                    };
+                }
+                or {
+                 
+                    BSendCancel:
+                    await Tickets[self] # {};
+                    CState[self] := "waiting";
+                    
+                    wantSeat := CHOOSE s \in Tickets[self] : TRUE;
+                    Channels[0] := Append(Channels[0],
+                                         [type |-> "cancel",
+                                          from |-> ip,
+                                          seat |-> wantSeat,
+                                          bankID |-> id]);
+                };
 
                 BWaitReply:
                 await (Len(Channels[ip]) > 0);
+
+                BProcessing:
                 reply := Head(Channels[ip]);
                 Channels[ip] := Tail(Channels[ip]);
 
-                
                 BUpdate:
-                skip;
+                if (reply.type = "confirm") {
+                    if (reply.seat \in Tickets[self]) {
+                        \* If we were canceling, remove it
+                        Tickets[self] := Tickets[self] \ {reply.seat};
+                    } else {
+                        \* The Server process currently updates Tickets 
+                        \* globally on "buy", so we just acknowledge here.
+                        skip; 
+                    };
+                };
 
                 CState[self] := "idle";
             }
@@ -189,11 +234,10 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         while (TRUE) { skip; };
     }
 } *)
-\* BEGIN TRANSLATION (chksum(pcal) = "6d61de77" /\ chksum(tla) = "5a5b35dc")
-\* Label s1 of process Server at line 91 col 13 changed to s1_
-\* Label Done_ of process Server at line 138 col 9 changed to Done__
-\* Process variable id of process Server at line 87 col 9 changed to id_
-\* Process variable ip of process Server at line 88 col 9 changed to ip_
+\* BEGIN TRANSLATION (chksum(pcal) = "4513241d" /\ chksum(tla) = "5a195abc")
+\* Label s1 of process Server at line 89 col 13 changed to s1_
+\* Process variable id of process Server at line 84 col 9 changed to id_
+\* Process variable ip of process Server at line 85 col 9 changed to ip_
 VARIABLES BankAccount, Channels, seatMap, Tickets, CState, pc
 
 (* define statement *)
@@ -216,7 +260,7 @@ MessageType == [type : TransactionType,
 
 M0 == [type |-> "buy",
        from |-> 0,
-       seat |-> 1,
+       seat |-> 0,
        bankID |-> 0]
 
 Money(p) == BankAccount[p]
@@ -231,7 +275,6 @@ TypeOK ==
   /\ seatMap \in [Seats -> SeatStates]
   /\ Tickets \in [AllHonest -> SUBSET Seats]
   /\ CState \in [AllHonest -> {"idle","waiting","done"}]
-
 
 MoneyTicketsInv ==
   \A c \in AllHonest :
@@ -250,9 +293,10 @@ NoDoubleSell ==
 
 
 
+
 AllDone ==
   /\ \A c \in AllHonest : CState[c] = "done"
-  /\ \A p \in AllParticipants : Len(Channels[p]) = 0
+
 
 Terminates == <>AllDone
 
@@ -284,23 +328,21 @@ Init == (* Global variables *)
                                         [] self \in AllHonest -> "InitTarget"]
 
 s1_ == /\ pc[0] = "s1_"
-       /\ IF ~AllDone
-             THEN /\ pc' = [pc EXCEPT ![0] = "WW"]
-             ELSE /\ pc' = [pc EXCEPT ![0] = "Done__"]
+       /\ pc' = [pc EXCEPT ![0] = "WW"]
        /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, CState, id_, 
                        ip_, internalReq, id, ip, wantSeat, reply, target, 
                        availSeats >>
 
 WW == /\ pc[0] = "WW"
-      /\ (Len(Channels[ip_]) > 0)
+      /\ Len(Channels[0]) > 0
       /\ pc' = [pc EXCEPT ![0] = "GET"]
       /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, CState, id_, 
                       ip_, internalReq, id, ip, wantSeat, reply, target, 
                       availSeats >>
 
 GET == /\ pc[0] = "GET"
-       /\ internalReq' = Head(Channels[ip_])
-       /\ Channels' = [Channels EXCEPT ![ip_] = Tail(Channels[ip_])]
+       /\ internalReq' = Head(Channels[0])
+       /\ Channels' = [Channels EXCEPT ![ip_] = Tail(Channels[0])]
        /\ pc' = [pc EXCEPT ![0] = "TREAT"]
        /\ UNCHANGED << BankAccount, seatMap, Tickets, CState, id_, ip_, id, ip, 
                        wantSeat, reply, target, availSeats >>
@@ -308,7 +350,6 @@ GET == /\ pc[0] = "GET"
 TREAT == /\ pc[0] = "TREAT"
          /\ IF internalReq.type = "buy"
                THEN /\ IF seatMap[internalReq.seat] = "available"
-                          /\ internalReq.bankID \in AllHonest
                           /\ BankAccount[internalReq.bankID] > 0
                           THEN /\ seatMap' = [seatMap EXCEPT ![internalReq.seat] = "paid"]
                                /\ BankAccount' = [BankAccount EXCEPT
@@ -327,23 +368,33 @@ TREAT == /\ pc[0] = "TREAT"
                                                                                              seat |-> internalReq.seat,
                                                                                              bankID |-> -2])]
                                /\ UNCHANGED << BankAccount, seatMap, Tickets >>
-               ELSE /\ TRUE
-                    /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets >>
+               ELSE /\ IF internalReq.type = "cancel"
+                          THEN /\ IF seatMap[internalReq.seat] = "paid"
+                                     THEN /\ seatMap' = [seatMap EXCEPT ![internalReq.seat] = "available"]
+                                          /\ BankAccount' = [BankAccount EXCEPT ![internalReq.bankID] = BankAccount[internalReq.bankID] + 1,
+                                                                                ![0] = BankAccount[0] - 1]
+                                          /\ Channels' = [Channels EXCEPT ![internalReq.from] =  Append(Channels[internalReq.from],
+                                                                                                [type |-> "confirm",
+                                                                                                 from |-> 0,
+                                                                                                 seat |-> internalReq.seat,
+                                                                                                 bankID |-> -2])]
+                                     ELSE /\ Channels' = [Channels EXCEPT ![internalReq.from] =  Append(Channels[internalReq.from],
+                                                                                                [type |-> "deny",
+                                                                                                 from |-> 0,
+                                                                                                 seat |-> internalReq.seat,
+                                                                                                 bankID |-> -2])]
+                                          /\ UNCHANGED << BankAccount, seatMap >>
+                          ELSE /\ TRUE
+                               /\ UNCHANGED << BankAccount, Channels, seatMap >>
+                    /\ UNCHANGED Tickets
          /\ pc' = [pc EXCEPT ![0] = "s1_"]
          /\ UNCHANGED << CState, id_, ip_, internalReq, id, ip, wantSeat, 
                          reply, target, availSeats >>
 
-Done__ == /\ pc[0] = "Done__"
-          /\ TRUE
-          /\ pc' = [pc EXCEPT ![0] = "Done__"]
-          /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, CState, id_, 
-                          ip_, internalReq, id, ip, wantSeat, reply, target, 
-                          availSeats >>
-
-Server == s1_ \/ WW \/ GET \/ TREAT \/ Done__
+Server == s1_ \/ WW \/ GET \/ TREAT
 
 InitTarget(self) == /\ pc[self] = "InitTarget"
-                    /\ target' = [target EXCEPT ![self] = CHOOSE k \in 0..Min2(INITMONEY, NUMSEATS) : TRUE]
+                    /\ target' = [target EXCEPT ![self] = CHOOSE k \in 1..Min2(INITMONEY, NUMSEATS) : TRUE]
                     /\ pc' = [pc EXCEPT ![self] = "s1"]
                     /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, 
                                     CState, id_, ip_, internalReq, id, ip, 
@@ -370,40 +421,83 @@ CheckDone(self) == /\ pc[self] = "CheckDone"
 
 BWaitIdle(self) == /\ pc[self] = "BWaitIdle"
                    /\ (CState[self] = "idle")
-                   /\ pc' = [pc EXCEPT ![self] = "BSend"]
+                   /\ pc' = [pc EXCEPT ![self] = "ActionChoice"]
                    /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, 
                                    CState, id_, ip_, internalReq, id, ip, 
                                    wantSeat, reply, target, availSeats >>
 
-BSend(self) == /\ pc[self] = "BSend"
-               /\ CState' = [CState EXCEPT ![self] = "waiting"]
-               /\ availSeats' = [availSeats EXCEPT ![self] = {s \in Seats : seatMap[s] = "available"}]
-               /\ wantSeat' = [wantSeat EXCEPT ![self] = CHOOSE s \in availSeats'[self] : TRUE]
-               /\ Channels' = [Channels EXCEPT ![0] = Append(Channels[0],
-                                                            [type |-> "buy",
-                                                             from |-> ip[self],
-                                                             seat |-> wantSeat'[self],
-                                                             bankID |-> id[self]])]
-               /\ pc' = [pc EXCEPT ![self] = "BWaitReply"]
-               /\ UNCHANGED << BankAccount, seatMap, Tickets, id_, ip_, 
-                               internalReq, id, ip, reply, target >>
+ActionChoice(self) == /\ pc[self] = "ActionChoice"
+                      /\ \/ /\ pc' = [pc EXCEPT ![self] = "BSendBuy"]
+                         \/ /\ pc' = [pc EXCEPT ![self] = "BSendCancel"]
+                      /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, 
+                                      CState, id_, ip_, internalReq, id, ip, 
+                                      wantSeat, reply, target, availSeats >>
+
+BSendBuy(self) == /\ pc[self] = "BSendBuy"
+                  /\ CState' = [CState EXCEPT ![self] = "waiting"]
+                  /\ availSeats' = [availSeats EXCEPT ![self] = {s \in Seats : seatMap[s] = "available"}]
+                  /\ IF availSeats'[self] # {}
+                        THEN /\ wantSeat' = [wantSeat EXCEPT ![self] = CHOOSE s \in availSeats'[self] : TRUE]
+                             /\ Channels' = [Channels EXCEPT ![0] = Append(Channels[0],
+                                                                          [type |-> "buy",
+                                                                           from |-> ip[self],
+                                                                           seat |-> wantSeat'[self],
+                                                                           bankID |-> id[self]])]
+                             /\ pc' = [pc EXCEPT ![self] = "BWaitReply"]
+                        ELSE /\ pc' = [pc EXCEPT ![self] = "BNoSeats"]
+                             /\ UNCHANGED << Channels, wantSeat >>
+                  /\ UNCHANGED << BankAccount, seatMap, Tickets, id_, ip_, 
+                                  internalReq, id, ip, reply, target >>
+
+BNoSeats(self) == /\ pc[self] = "BNoSeats"
+                  /\ CState' = [CState EXCEPT ![self] = "idle"]
+                  /\ pc' = [pc EXCEPT ![self] = "CheckDone"]
+                  /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, id_, 
+                                  ip_, internalReq, id, ip, wantSeat, reply, 
+                                  target, availSeats >>
+
+BSendCancel(self) == /\ pc[self] = "BSendCancel"
+                     /\ Tickets[self] # {}
+                     /\ CState' = [CState EXCEPT ![self] = "waiting"]
+                     /\ wantSeat' = [wantSeat EXCEPT ![self] = CHOOSE s \in Tickets[self] : TRUE]
+                     /\ Channels' = [Channels EXCEPT ![0] = Append(Channels[0],
+                                                                  [type |-> "cancel",
+                                                                   from |-> ip[self],
+                                                                   seat |-> wantSeat'[self],
+                                                                   bankID |-> id[self]])]
+                     /\ pc' = [pc EXCEPT ![self] = "BWaitReply"]
+                     /\ UNCHANGED << BankAccount, seatMap, Tickets, id_, ip_, 
+                                     internalReq, id, ip, reply, target, 
+                                     availSeats >>
 
 BWaitReply(self) == /\ pc[self] = "BWaitReply"
                     /\ (Len(Channels[ip[self]]) > 0)
-                    /\ reply' = [reply EXCEPT ![self] = Head(Channels[ip[self]])]
-                    /\ Channels' = [Channels EXCEPT ![ip[self]] = Tail(Channels[ip[self]])]
-                    /\ pc' = [pc EXCEPT ![self] = "BUpdate"]
-                    /\ UNCHANGED << BankAccount, seatMap, Tickets, CState, id_, 
-                                    ip_, internalReq, id, ip, wantSeat, target, 
-                                    availSeats >>
+                    /\ pc' = [pc EXCEPT ![self] = "BProcessing"]
+                    /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, 
+                                    CState, id_, ip_, internalReq, id, ip, 
+                                    wantSeat, reply, target, availSeats >>
+
+BProcessing(self) == /\ pc[self] = "BProcessing"
+                     /\ reply' = [reply EXCEPT ![self] = Head(Channels[ip[self]])]
+                     /\ Channels' = [Channels EXCEPT ![ip[self]] = Tail(Channels[ip[self]])]
+                     /\ pc' = [pc EXCEPT ![self] = "BUpdate"]
+                     /\ UNCHANGED << BankAccount, seatMap, Tickets, CState, 
+                                     id_, ip_, internalReq, id, ip, wantSeat, 
+                                     target, availSeats >>
 
 BUpdate(self) == /\ pc[self] = "BUpdate"
-                 /\ TRUE
+                 /\ IF reply[self].type = "confirm"
+                       THEN /\ IF reply[self].seat \in Tickets[self]
+                                  THEN /\ Tickets' = [Tickets EXCEPT ![self] = Tickets[self] \ {reply[self].seat}]
+                                  ELSE /\ TRUE
+                                       /\ UNCHANGED Tickets
+                       ELSE /\ TRUE
+                            /\ UNCHANGED Tickets
                  /\ CState' = [CState EXCEPT ![self] = "idle"]
                  /\ pc' = [pc EXCEPT ![self] = "s1"]
-                 /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, id_, 
-                                 ip_, internalReq, id, ip, wantSeat, reply, 
-                                 target, availSeats >>
+                 /\ UNCHANGED << BankAccount, Channels, seatMap, id_, ip_, 
+                                 internalReq, id, ip, wantSeat, reply, target, 
+                                 availSeats >>
 
 Done_(self) == /\ pc[self] = "Done_"
                /\ TRUE
@@ -413,22 +507,17 @@ Done_(self) == /\ pc[self] = "Done_"
                                target, availSeats >>
 
 HClient(self) == InitTarget(self) \/ s1(self) \/ CheckDone(self)
-                    \/ BWaitIdle(self) \/ BSend(self) \/ BWaitReply(self)
-                    \/ BUpdate(self) \/ Done_(self)
-
-(* Allow infinite stuttering to prevent deadlock on termination. *)
-Terminating == /\ \A self \in ProcSet: pc[self] = "Done"
-               /\ UNCHANGED vars
+                    \/ BWaitIdle(self) \/ ActionChoice(self)
+                    \/ BSendBuy(self) \/ BNoSeats(self)
+                    \/ BSendCancel(self) \/ BWaitReply(self)
+                    \/ BProcessing(self) \/ BUpdate(self) \/ Done_(self)
 
 Next == Server
            \/ (\E self \in AllHonest: HClient(self))
-           \/ Terminating
 
 Spec == /\ Init /\ [][Next]_vars
         /\ WF_vars(Server)
         /\ \A self \in AllHonest : WF_vars(HClient(self))
-
-Termination == <>(\A self \in ProcSet: pc[self] = "Done")
 
 \* END TRANSLATION 
 

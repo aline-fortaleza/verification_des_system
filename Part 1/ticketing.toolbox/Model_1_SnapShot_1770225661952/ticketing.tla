@@ -194,32 +194,27 @@ Min2(a, b) == IF a <= b THEN a ELSE b
                                               seat |-> wantSeat,
                                               bankID |-> id]);
                                               
-                                                          
+                                              
+                         
                     } else {
+                    
                         BNoSeats:           
                         CState[self] := "idle";
                         goto CheckDone;
                     };
                 }
                 or {
-                    BCancel:
-                    if (Tickets[self] = {}){
-                        BNoTicketsToCancel:
-                        CState[self] := "idle";
-                        goto BSendBuy;
-                    }
-                    else {
-                        BSendCancel:
-                        await Tickets[self] # {};
-                        CState[self] := "waiting";
-                        
-                        wantSeat := CHOOSE s \in Tickets[self] : TRUE;
-                        Channels[0] := Append(Channels[0],
-                                             [type |-> "cancel",
-                                              from |-> ip,
-                                              seat |-> wantSeat,
-                                              bankID |-> id]);
-                     }                     
+                 
+                    BSendCancel:
+                    await Tickets[self] # {};
+                    CState[self] := "waiting";
+                    
+                    wantSeat := CHOOSE s \in Tickets[self] : TRUE;
+                    Channels[0] := Append(Channels[0],
+                                         [type |-> "cancel",
+                                          from |-> ip,
+                                          seat |-> wantSeat,
+                                          bankID |-> id]);
                 };
 
                 BWaitReply:
@@ -241,7 +236,7 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         while (TRUE) { skip; };
     }
 } *)
-\* BEGIN TRANSLATION (chksum(pcal) = "d1fcc1ce" /\ chksum(tla) = "13a110d3")
+\* BEGIN TRANSLATION (chksum(pcal) = "bc245632" /\ chksum(tla) = "ee695b33")
 \* Label s1 of process Server at line 93 col 13 changed to s1_
 \* Process variable id of process Server at line 88 col 9 changed to id_
 \* Process variable ip of process Server at line 89 col 9 changed to ip_
@@ -442,7 +437,7 @@ BWaitIdle(self) == /\ pc[self] = "BWaitIdle"
 
 ActionChoice(self) == /\ pc[self] = "ActionChoice"
                       /\ \/ /\ pc' = [pc EXCEPT ![self] = "BSendBuy"]
-                         \/ /\ pc' = [pc EXCEPT ![self] = "BCancel"]
+                         \/ /\ pc' = [pc EXCEPT ![self] = "BSendCancel"]
                       /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, 
                                       CState, Flag, id_, ip_, internalReq, id, 
                                       ip, wantSeat, reply, target, availSeats >>
@@ -469,22 +464,6 @@ BNoSeats(self) == /\ pc[self] = "BNoSeats"
                   /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, 
                                   Flag, id_, ip_, internalReq, id, ip, 
                                   wantSeat, reply, target, availSeats >>
-
-BCancel(self) == /\ pc[self] = "BCancel"
-                 /\ IF Tickets[self] = {}
-                       THEN /\ pc' = [pc EXCEPT ![self] = "BNoTicketsToCancel"]
-                       ELSE /\ pc' = [pc EXCEPT ![self] = "BSendCancel"]
-                 /\ UNCHANGED << BankAccount, Channels, seatMap, Tickets, 
-                                 CState, Flag, id_, ip_, internalReq, id, ip, 
-                                 wantSeat, reply, target, availSeats >>
-
-BNoTicketsToCancel(self) == /\ pc[self] = "BNoTicketsToCancel"
-                            /\ CState' = [CState EXCEPT ![self] = "idle"]
-                            /\ pc' = [pc EXCEPT ![self] = "BSendBuy"]
-                            /\ UNCHANGED << BankAccount, Channels, seatMap, 
-                                            Tickets, Flag, id_, ip_, 
-                                            internalReq, id, ip, wantSeat, 
-                                            reply, target, availSeats >>
 
 BSendCancel(self) == /\ pc[self] = "BSendCancel"
                      /\ Tickets[self] # {}
@@ -532,10 +511,9 @@ Done_(self) == /\ pc[self] = "Done_"
 
 HClient(self) == InitTarget(self) \/ s1(self) \/ CheckDone(self)
                     \/ BWaitIdle(self) \/ ActionChoice(self)
-                    \/ BSendBuy(self) \/ BNoSeats(self) \/ BCancel(self)
-                    \/ BNoTicketsToCancel(self) \/ BSendCancel(self)
-                    \/ BWaitReply(self) \/ BProcessing(self)
-                    \/ BUpdate(self) \/ Done_(self)
+                    \/ BSendBuy(self) \/ BNoSeats(self)
+                    \/ BSendCancel(self) \/ BWaitReply(self)
+                    \/ BProcessing(self) \/ BUpdate(self) \/ Done_(self)
 
 Next == Server
            \/ (\E self \in AllHonest: HClient(self))

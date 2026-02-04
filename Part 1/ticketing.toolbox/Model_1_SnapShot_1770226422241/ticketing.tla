@@ -206,7 +206,7 @@ Min2(a, b) == IF a <= b THEN a ELSE b
                     if (Tickets[self] = {}){
                         BNoTicketsToCancel:
                         CState[self] := "idle";
-                        goto BSendBuy;
+                        goto CheckDone;
                     }
                     else {
                         BSendCancel:
@@ -241,7 +241,7 @@ Min2(a, b) == IF a <= b THEN a ELSE b
         while (TRUE) { skip; };
     }
 } *)
-\* BEGIN TRANSLATION (chksum(pcal) = "d1fcc1ce" /\ chksum(tla) = "13a110d3")
+\* BEGIN TRANSLATION (chksum(pcal) = "3d287fb8" /\ chksum(tla) = "fa119b55")
 \* Label s1 of process Server at line 93 col 13 changed to s1_
 \* Process variable id of process Server at line 88 col 9 changed to id_
 \* Process variable ip of process Server at line 89 col 9 changed to ip_
@@ -480,7 +480,7 @@ BCancel(self) == /\ pc[self] = "BCancel"
 
 BNoTicketsToCancel(self) == /\ pc[self] = "BNoTicketsToCancel"
                             /\ CState' = [CState EXCEPT ![self] = "idle"]
-                            /\ pc' = [pc EXCEPT ![self] = "BSendBuy"]
+                            /\ pc' = [pc EXCEPT ![self] = "CheckDone"]
                             /\ UNCHANGED << BankAccount, Channels, seatMap, 
                                             Tickets, Flag, id_, ip_, 
                                             internalReq, id, ip, wantSeat, 
