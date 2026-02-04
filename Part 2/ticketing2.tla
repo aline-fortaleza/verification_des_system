@@ -1,4 +1,4 @@
------------------------------ MODULE tickets -----------------------------
+----------------------------- MODULE ticketing2 -----------------------------
 EXTENDS Integers, TLC, Sequences, FiniteSets
 
 CONSTANTS NUMCLIENTS, MALICIOUS, NUMSEATS, INITMONEY
